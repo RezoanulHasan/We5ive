@@ -1,6 +1,7 @@
 /* eslint-disable react/no-children-prop */
 "use client";
 import Container from "@/components/shared/Container/Container";
+import AddsBanner from "@/components/UI/Homepage/AddsBanner";
 import Banner from "@/components/UI/Homepage/Banner";
 import FeaturesGrid from "@/components/UI/Homepage/FeaturesGrid";
 import { AiOutlineArrowUp } from "react-icons/ai";
@@ -11,6 +12,8 @@ const HomePage: React.FC = () => {
       <Banner></Banner>
       <FeaturesGrid></FeaturesGrid>{" "}
       <Container>
+        <AddsBanner></AddsBanner>
+
         <a
           href="#"
           className="absolute bottom-0 right-0  bg-black text-white rounded-full"

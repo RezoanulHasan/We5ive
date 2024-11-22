@@ -20,13 +20,13 @@ const data = [
 
 const FeaturesGrid = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-2 shadow-sm hover:shadow-md bg-[#6441C2E5] ">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-1 shadow-sm hover:shadow-md bg-[#6441C2E5] ">
       {data.map((item, index) => (
         <div
           key={index}
           className="flex items-center p-4 rounded-lg text-white hover:bg-[#886cd2e5]"
         >
-          <div className="text-4xl mr-4">{item.icon}</div>
+          <div className="text-3xl mr-4">{item.icon}</div>
           <div>
             <h3 className="text-lg font-semibold text-center">{item.title}</h3>
             <p className="text-sm text-center">{item.description}</p>
