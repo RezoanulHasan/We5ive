@@ -1,4 +1,5 @@
 "use client";
+
 import Spinner from "@/components/shared/Spinner/Spinner";
 
 const LoadingPage: React.FC = () => {

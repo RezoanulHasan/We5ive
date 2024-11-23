@@ -4,6 +4,7 @@ import Container from "@/components/shared/Container/Container";
 import AddsBanner from "@/components/UI/Homepage/AddsBanner";
 import Banner from "@/components/UI/Homepage/Banner";
 import FeaturesGrid from "@/components/UI/Homepage/FeaturesGrid";
+
 import NewArrival from "@/components/UI/Homepage/Product/NewArrival";
 import Summer from "@/components/UI/Homepage/Product/Summer";
 import Slider from "@/components/UI/Homepage/Slider/Slider";

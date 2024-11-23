@@ -1,6 +1,6 @@
 import NotFoundPageAll from "@/components/shared/NotFoundPage/NotFoundPageAll";
 
-const NotFoundPage = () => {
+const NotFoundPage: React.FC = () => {
   return (
     <>
       <NotFoundPageAll></NotFoundPageAll>
