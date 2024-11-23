@@ -14,3 +14,11 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+
+.bg-custom {
+  @apply bg-gradient-to-r from-[#f7f3ff] via-[#eae4ff] to-[#dcd6ff];
+}
+
+.button-custom {
+  @apply bg-[#8f71e1] text-white hover:bg-[#7e63d6] transition duration-300 ease-in-out rounded-lg;
+}

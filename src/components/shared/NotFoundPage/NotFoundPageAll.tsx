@@ -25,8 +25,8 @@ const NotFoundPageAll = () => {
         <section className="flex items-center h-screen p-16 bg-gray-100 text-gray-900">
           <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
             <div className="max-w-md text-center">
-              <h1 className="text-center text-4xl mb-5">
-                Page not <span className="text-accent">Found </span>
+              <h1 className="text-center text-4xl mb-5 text-[#6441C2E5] ">
+                Page not <span className="text-[#8665dee5] ">Found </span>
               </h1>
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <Image
@@ -38,7 +38,7 @@ const NotFoundPageAll = () => {
               </div>
               <button
                 onClick={() => router.push("/")}
-                className="btn mt-10  btn-outline   bg-black text-green-300   "
+                className="btn mt-10  button-custom   "
               >
                 Back to homepage
               </button>

@@ -7,7 +7,7 @@ const AddsBanner: React.FC = () => {
     <div
       data-aos="zoom-in"
       data-aos-duration="1500"
-      className="mt-10  bg-gradient-to-r from-[#f7f3ff] via-[#eae4ff] to-[#dcd6ff] flex flex-col md:flex-row items-center    justify-between       p-6 md:p-12 gap-6 md:gap-12 mx-4 md:mx-10 rounded-lg shadow-lg transition-all duration-500 hover:shadow-xl"
+      className="mt-10  mb-20 bg-custom flex flex-col md:flex-row items-center    justify-between       p-6 md:p-12 gap-6 md:gap-12 mx-4 md:mx-10 rounded-lg shadow-lg transition-all duration-500 hover:shadow-xl"
     >
       <div className="mx-auto md:mx-40 flex-2 text-center md:text-left">
         <h1 className="font-poppins font-extrabold italic   text-[#6441C2E5] text-3xl ">
