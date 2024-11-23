@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"); /* Import Dancing Script font */
+
+.signature-container {
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center align items */
+  justify-content: center; /* Center align items vertically */
+  height: 100vh; /* Full height of the viewport */
+  background-color: #ecf0f1; /* Light background color */
+}
+
+.signature {
+  font-family: "Dancing Script", cursive; /* Handwritten font for name */
+  font-size: 40px; /* Increase font size for better visibility */
+  color: #2c3e50; /* Dark shade for text */
+  display: inline-block; /* Allow animation to work without wrapping */
+  white-space: nowrap; /* Prevent line breaks */
+  overflow: hidden; /* Hide overflow for typing animation */
+  border-right: 0px solid #2c3e50; /* Cursor effect */
+  animation: typing 4s steps(15) forwards, blink-caret 0.75s step-end infinite; /* Add animation */
+  margin-bottom: 2px; /* Space between name and title */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2), 0 0 25px rgba(0, 0, 0, 0.2); /* Optional shadow */
+}
+
+@keyframes typing {
+  from {
+    width: 0; /* Start with no width */
+  }
+  to {
+    width: 100%; /* End with full width */
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent; /* Hide cursor at the start and end */
+  }
+  50% {
+    border-color: #2c3e50; /* Blink cursor color */
+  }
+}
+
+.title {
+  font-family: "Arial", sans-serif; /* Use a clean sans-serif font for the title */
+  font-size: 24px; /* Smaller font size for the title */
+  color: #34495e; /* Different shade for the title */
+  text-align: center; /* Center align title */
+  margin-top: 5px; /* Space above the title */
+  font-weight: 400; /* Normal weight */
+  text-transform: uppercase; /* Uppercase for the title */
+}

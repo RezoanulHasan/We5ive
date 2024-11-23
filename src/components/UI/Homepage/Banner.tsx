@@ -6,7 +6,7 @@ import React from "react";
 const Banner: React.FC = () => {
   return (
     <>
-      <div className="bg-[rgba(245,243,255,1)] flex flex-col items-center justify-center text-center py-16 px-4 mt-20">
+      <div className="flex flex-col items-center justify-center text-center py-16 px-4 mt-20">
         {/* Headline */}
         <h1
           className="font-manrope font-bold text-[48px] leading-[62.4px] text-left black mb-4"
