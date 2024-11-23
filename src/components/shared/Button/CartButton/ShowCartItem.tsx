@@ -43,7 +43,8 @@ const ShowCartItem: React.FC = () => {
   return (
     <div className="p-4 sm:p-8 mt-16">
       <h2 className="text-2xl font-bold mb-8 text-gray-800 text-center">
-        Your Cart
+        Your Cart ({cartItems.length}{" "}
+        {cartItems.length === 1 ? "item" : "items"})
       </h2>
 
       {cartItems.length === 0 ? (
@@ -92,26 +93,28 @@ const ShowCartItem: React.FC = () => {
                 <div className="mt-4 flex justify-between items-center">
                   <Link href={`/products/${product.id}`}>
                     <button
-                      className="flex items-center px-3 py-2  text-sm font-medium   "
+                      className="flex items-center px-3 py-2  text-sm font-medium  button-custom btn"
                       aria-label={`View details for ${product.title}`}
                     >
                       <FaInfoCircle className="mr-2 text-base" />
                       Details
                     </button>
                   </Link>
+
                   <button
                     onClick={() => handleRemoveFromCart(product.id!)} // Non-null assertion
-                    className="text-red-500 hover:text-red-700"
+                    className="btn rounded-lg flex items-center px-3 py-2 text-red-500 hover:text-red-700 text-sm font-medium"
                     aria-label={`Remove ${product.title} from cart`}
                   >
-                    <FaTrashAlt className="text-lg" />
+                    <FaTrashAlt className="mr-2 text-base" />
+                    Remove
                   </button>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Total Price Section */}
+          {/* Proceed to Checkout Section */}
           <div className="mt-8 bg-gray-100 p-6 rounded-lg shadow-lg text-center">
             <button className="mt-4 px-6 py-3 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition">
               Proceed to Checkout
