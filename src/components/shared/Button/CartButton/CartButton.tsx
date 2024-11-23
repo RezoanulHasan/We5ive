@@ -47,15 +47,18 @@ const CartButton: React.FC<CartButtonProps> = ({ product }) => {
       const newProduct = { ...product, quantity: 1 };
       currentCart.push(newProduct);
 
-      // Save the updated cart back to localStorage
-      localStorage.setItem("cart", JSON.stringify(currentCart));
-
-      // Show success message
+      // Show success message before saving
       Swal.fire({
         icon: "success",
         title: "Added to cart",
         text: `${product.title} has been successfully added to your cart.`,
         confirmButtonText: "OK",
+      }).then(() => {
+        // Save the updated cart back to localStorage
+        localStorage.setItem("cart", JSON.stringify(currentCart));
+
+        // Reload the browser window
+        window.location.reload();
       });
 
       // Update the state to reflect the product is now in the cart
@@ -72,7 +75,7 @@ const CartButton: React.FC<CartButtonProps> = ({ product }) => {
       <FaCartPlus
         className={`mr-2 text-xl ${isInCart ? "text-black" : "text-white"}`}
       />
-      Add to Cart
+      {isInCart ? "In Cart" : "Add to Cart"}
     </button>
   );
 };

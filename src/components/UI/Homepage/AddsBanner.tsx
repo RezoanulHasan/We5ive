@@ -1,3 +1,4 @@
+"use client";
 import Button from "@/components/shared/Button/Button";
 import Image from "next/image";
 import React from "react";

@@ -9,8 +9,10 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import NewArrival from "./NewArrival";
 import CartButton from "@/components/shared/Button/CartButton/CartButton";
+import useTitle from "@/components/Hooks/useTitle";
 
 const ProductDetails: React.FC = () => {
+  useTitle("Product Details");
   // State for selected size, color, and quantity
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
@@ -225,7 +227,7 @@ const ProductDetails: React.FC = () => {
                         : ""
                     }`}
                     style={{ backgroundColor: color }}
-                    onClick={() => setSelectedColor(color)} // Update selected color
+                    onClick={() => setSelectedColor(color)}
                   />
                 ))}
               </div>

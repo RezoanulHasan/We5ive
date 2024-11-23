@@ -28,15 +28,15 @@ const ShowCartItem: React.FC = () => {
     // Update localStorage with the new cart data
     localStorage.setItem("cart", JSON.stringify(updatedCart));
 
-    // Update the state to reflect the change
-    setCartItems(updatedCart);
-
     // Show success message
     Swal.fire({
       icon: "success",
       title: "Removed from cart",
       text: "The product has been removed from your cart.",
       confirmButtonText: "OK",
+    }).then(() => {
+      // Reload the browser window
+      window.location.reload();
     });
   };
 

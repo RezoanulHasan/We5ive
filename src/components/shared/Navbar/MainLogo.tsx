@@ -1,11 +1,11 @@
-import React from "react";
+"use client";
 
 import Image from "next/image";
 
 import logo from "../../../assets/logo.png";
 
 import Link from "next/link";
-const MainLogo = () => {
+const MainLogo: React.FC = () => {
   return (
     <div>
       <Link href="/" className="btn btn-ghost text-2xl">

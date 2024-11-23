@@ -1,6 +1,7 @@
+"use client";
 import { Bars } from "react-loader-spinner";
 
-const Spinner = () => {
+const Spinner: React.FC = () => {
   return (
     <div>
       <div className="flex justify-center items-center    h-[calc(100vh-68px)]  ">

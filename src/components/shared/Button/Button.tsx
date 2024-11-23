@@ -1,7 +1,9 @@
+"use client";
+
 import React from "react";
 import { FaArrowTrendUp } from "react-icons/fa6";
 
-const Button = () => {
+const Button: React.FC = () => {
   return (
     <div>
       <div className="flex">

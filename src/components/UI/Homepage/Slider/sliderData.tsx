@@ -1,3 +1,5 @@
+"use client";
+
 import man from "../../../../assets/SliderLogo/man.jpg";
 import Woman from "../../../../assets/SliderLogo/Woman.jpg";
 import Kid from "../../../../assets/SliderLogo/Kid.jpg";

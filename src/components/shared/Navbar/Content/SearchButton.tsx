@@ -1,7 +1,9 @@
+"use client";
+
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 
-const SearchButton = () => {
+const SearchButton: React.FC = () => {
   const [showSearch, setShowSearch] = useState(false);
 
   const handleSearchToggle = () => {

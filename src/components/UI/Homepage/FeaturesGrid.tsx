@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 
 const data = [
@@ -19,7 +20,7 @@ const data = [
   },
 ];
 
-const FeaturesGrid = () => {
+const FeaturesGrid: React.FC = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6  shadow-sm hover:shadow-md bg-[#6441C2E5] ">
       {data.map((item, index) => (

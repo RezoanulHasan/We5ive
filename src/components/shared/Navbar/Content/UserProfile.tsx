@@ -1,6 +1,7 @@
+"use client";
 import React from "react";
 import { FaUserAlt } from "react-icons/fa";
-const UserProfile = () => {
+const UserProfile: React.FC = () => {
   return (
     <div>
       {/* User Profile Dropdown */}

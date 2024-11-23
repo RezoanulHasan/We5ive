@@ -9,7 +9,7 @@ import ShoppingCart from "./Content/ShoppingCart";
 import UserProfile from "./Content/UserProfile";
 import MainLogo from "./MainLogo";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const { scrollYProgress } = useScroll();
 
   const navOptions = (

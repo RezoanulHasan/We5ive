@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 import { useRouter } from "next/navigation";
 import useTitle from "@/components/Hooks/useTitle";
 
-const NotFoundPageAll = () => {
+const NotFoundPageAll: React.FC = () => {
   useTitle("Not Found");
   const router = useRouter();
 

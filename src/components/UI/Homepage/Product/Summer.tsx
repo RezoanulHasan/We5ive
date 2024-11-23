@@ -1,11 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
-
+"use client";
 import { productDatas } from "@/components/ProductData/ProductData";
 import React, { useState } from "react";
 import { FaCartPlus, FaInfoCircle } from "react-icons/fa";
 import Link from "next/link";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import CartButton from "@/components/shared/Button/CartButton/CartButton";
 
 const Summer: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
@@ -68,13 +69,7 @@ const Summer: React.FC = () => {
                 </div>
               </div>
               <div className="flex justify-between items-center mt-4">
-                <button
-                  className="flex items-center button-custom p-2"
-                  aria-label={`Add ${product.title} to cart`}
-                >
-                  <FaCartPlus className="mr-2 text-xl" />
-                  Add to Cart
-                </button>
+                <CartButton product={product} />
                 <Link href={`/products/${product.id}`}>
                   <button
                     className="flex items-center button-custom p-2"
