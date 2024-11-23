@@ -19,39 +19,69 @@ const AllProduct: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [sortOrder, setSortOrder] = useState<string>("lowToHigh");
   const [priceRange, setPriceRange] = useState<[number, number] | null>(null);
+  const [genderFilter, setGenderFilter] = useState<string | null>(null);
+  const [statusFilter, setStatusFilter] = useState<string | null>(null);
+  const [seasonFilter, setSeasonFilter] = useState<string[]>([]);
+  const [categoryFilter, setCategoryFilter] = useState<string[]>([]);
 
-  // Reset all filters
-  const resetFilters = () => {
-    setSearchQuery("");
-    setSortOrder("lowToHigh");
-    setPriceRange(null);
-  };
-
-  // Filter products based on the search query
+  // Filter products based on the applied filters
   const filteredProducts = productDatas
     .filter((product) =>
       product.title.toLowerCase().includes(searchQuery.toLowerCase())
     )
     .filter((product) => {
-      if (!priceRange) return true; // No range selected, show all
+      if (!priceRange) return true;
       const [min, max] = priceRange;
       return product.price >= min && product.price <= max;
-    });
+    })
+    .filter((product) =>
+      genderFilter ? product.gender === genderFilter : true
+    )
+    .filter((product) =>
+      statusFilter ? product.status === statusFilter : true
+    )
+    .filter((product) =>
+      seasonFilter.length > 0 ? seasonFilter.includes(product.season) : true
+    )
+    .filter((product) =>
+      categoryFilter.length > 0
+        ? categoryFilter.includes(product.category)
+        : true
+    );
 
-  // Sort products based on price (Low to High or High to Low)
+  // Sort products based on price
   const sortedProducts = filteredProducts.sort((a, b) => {
     if (sortOrder === "lowToHigh") {
-      return a.price - b.price; // Sort Low to High
+      return a.price - b.price;
     } else if (sortOrder === "highToLow") {
-      return b.price - a.price; // Sort High to Low
+      return b.price - a.price;
     }
     return 0;
   });
 
+  // Toggle checkboxes for season and category filters
+  const toggleFilter = (filter: string, value: string, setFilter: Function) => {
+    setFilter((prev: string[]) =>
+      prev.includes(value)
+        ? prev.filter((item) => item !== value)
+        : [...prev, value]
+    );
+  };
+
+  // Reset filters
+  const resetFilters = () => {
+    setSearchQuery("");
+    setSortOrder("lowToHigh");
+    setPriceRange(null);
+    setGenderFilter(null);
+    setStatusFilter(null);
+    setSeasonFilter([]);
+    setCategoryFilter([]);
+  };
   return (
-    <div className="flex p-4">
+    <div className="flex p-4  mt-24 rounded-lg">
       {/* Filter Panel */}
-      <div className="w-1/4 bg-gray-100 p-4 rounded-lg shadow-lg mr-6">
+      <div className="w-1/4 bg-custom p-4 rounded-lg shadow-lg mr-6">
         <h2 className="text-xl font-semibold mb-4">Filters</h2>
 
         {/* Search Filter */}
@@ -68,6 +98,88 @@ const AllProduct: React.FC = () => {
           </div>
         </div>
 
+        {/* Filter by Gender */}
+        <div className="mb-4">
+          <h3 className="text-sm font-semibold text-gray-700 mb-2">Gender</h3>
+          <div className="flex flex-col space-y-2">
+            {["Men", "Women", "Kid"].map((gender, index) => (
+              <label key={index} className="flex items-center">
+                <input
+                  type="radio"
+                  name="gender"
+                  checked={genderFilter === gender}
+                  onChange={() => setGenderFilter(gender)}
+                  className="form-radio h-4 w-4 text-blue-500"
+                />
+                <span className="ml-2 text-sm text-gray-600">{gender}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        {/* Filter by Season */}
+        <div className="mb-4">
+          <h3 className="text-sm font-semibold text-gray-700 mb-2">Season</h3>
+          {["Winter", "All Season", "Summer"].map((season) => (
+            <label key={season} className="flex items-center mb-2">
+              <input
+                type="checkbox"
+                checked={seasonFilter.includes(season)}
+                onChange={() => toggleFilter("season", season, setSeasonFilter)}
+                className="form-checkbox h-4 w-4 text-blue-500"
+              />
+              <span className="ml-2 text-sm text-gray-600">{season}</span>
+            </label>
+          ))}
+        </div>
+
+        {/* Filter by Status */}
+        <div className="mb-4">
+          <h3 className="text-sm font-semibold text-gray-700 mb-2">Status</h3>
+          <div className="flex flex-col space-y-2">
+            {["Regular", "Upcoming", "Top Sell", "New Arrival"].map(
+              (status, index) => (
+                <label key={index} className="flex items-center">
+                  <input
+                    type="radio"
+                    name="status"
+                    checked={statusFilter === status}
+                    onChange={() => setStatusFilter(status)}
+                    className="form-radio h-4 w-4 text-blue-500"
+                  />
+                  <span className="ml-2 text-sm text-gray-600">{status}</span>
+                </label>
+              )
+            )}
+          </div>
+        </div>
+        {/* Filter by Category */}
+        <div className="mb-4">
+          <h3 className="text-sm font-semibold text-gray-700 mb-2">Category</h3>
+          {[
+            "Outerwear",
+            "Dresses",
+            "Footwear",
+            "Shirts",
+            "Accessories",
+            "Hoodies",
+            "Sweaters",
+            "Pants",
+            "T-Shirts",
+          ].map((category) => (
+            <label key={category} className="flex items-center mb-2">
+              <input
+                type="checkbox"
+                checked={categoryFilter.includes(category)}
+                onChange={() =>
+                  toggleFilter("category", category, setCategoryFilter)
+                }
+                className="form-checkbox h-4 w-4 text-blue-500"
+              />
+              <span className="ml-2 text-sm text-gray-600">{category}</span>
+            </label>
+          ))}
+        </div>
         {/* Sorting by Price */}
         <div className="mb-4">
           <h3 className="text-sm font-semibold text-gray-700 mb-2">
@@ -150,7 +262,7 @@ const AllProduct: React.FC = () => {
       </div>
 
       {/* Product Listing */}
-      <div className="w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+      <div className="w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4  bg-custom  rounded-lg ">
         {sortedProducts.length > 0 ? (
           sortedProducts.map((product, index) => (
             <div
