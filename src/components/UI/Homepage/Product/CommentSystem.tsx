@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+
+"use client";
 import { commentData, Comment } from "@/components/ProductData/ProductData";
 import React from "react";
 
@@ -21,7 +23,10 @@ const CommentSystem: React.FC = () => {
             >
               {/* User Image */}
               <img
-                src={comment.image}
+                src={
+                  comment.image ||
+                  "https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjkzNy1hZXctMTY1LWtsaGN3ZWNtLmpwZw.jpg"
+                }
                 alt={comment.name}
                 className="w-12 h-12 rounded-full object-cover"
               />
@@ -65,7 +70,10 @@ const CommentSystem: React.FC = () => {
             >
               {/* User Image */}
               <img
-                src={comment.image}
+                src={
+                  comment.image ||
+                  "https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjkzNy1hZXctMTY1LWtsaGN3ZWNtLmpwZw.jpg"
+                }
                 alt={comment.name}
                 className="w-12 h-12 rounded-full object-cover"
               />

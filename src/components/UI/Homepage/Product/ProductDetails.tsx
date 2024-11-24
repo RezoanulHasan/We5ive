@@ -190,9 +190,14 @@ const ProductDetails: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-7 p-4 sm:p-6 md:p-8 lg:p-10 bg-custom">
+      <div className="flex flex-col lg:flex-row gap-7 p-4 sm:p-6 md:p-8 lg:p-10 bg-custom rounded-lg">
         {/* Comment System Section */}
         <div className="flex-1">
+          <div className="grid grid-cols-3  text-lg  gap-2  font-medium">
+            <h1>Details </h1>
+            <h1 className=" text-[#381195e5]">Reviews And Rating </h1>
+            <h1>Discussion</h1>
+          </div>
           <CommentSystem />
         </div>
 

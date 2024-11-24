@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# We5ive Website (FrontEnd E-commerce Website)
 
-## Getting Started
+### description:
 
-First, run the development server:
+    Our E-commerce platform offers a wide range of fashion and lifestyle products for men, women, and kids. Shop the latest trends in clothing, accessories, and footwear designed for every member of the family. From stylish outfits for men and women to playful collections for kids, we have something for everyone. Browse our curated selection of high-quality products, all available at your fingertips with fast and reliable delivery. Whether you're looking for trendy apparel or essentials, our store brings you the best for men, women, and kids.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## link live: https://e-commerce-frontend-indol.vercel.app/
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## **Features**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### **Home Page**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Interactive **Banner** and **Slider**.
+- **New Arrivals** section with **color filtering** options.
+- **Summer Collection** showcase for seasonal favorites.
 
-## Learn More
+### **Shopping Page**
 
-To learn more about Next.js, take a look at the following resources:
+- **Search filtering** by product title.
+- **Sort by price:** Low to High or High to Low.
+- **Price range filtering.**
+- **Category, Season, Gender, and Status-based filtering.**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### **Product Details Page**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Dynamic product pages with complete details fetched by ID.
+- Review count and interactive comment section.
+- "Coming Soon" product suggestions for future launches.
 
-## Deploy on Vercel
+### **Cart Management**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Add and remove products from the cart using **localStorage**.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## **Technology Stack**
+
+- **TypeScript**
+- **Next.js**
+- **Tailwind CSS**
+- **LocalStorage** (for cart functionality)
+- **ESLint** (for code formatting and quality assurance)
+
+---
+
+## Installation:
+
+1. Clone the repository.
+2. Install dependencies using `npm install`.
+3. Run the project using `npm run dev`.
+
+## website hosting
+
+- Vercel
+
+## Contact
+
+For any inquiries or further information, please reach out to:
+
+- Email: rezoanulhasan96@gmail.com
+- Phone: +88 01734639066
+
+Feel free to explore the website and enjoy your experience with We5ive !
