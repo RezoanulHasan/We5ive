@@ -242,7 +242,33 @@ const ProductDetails: React.FC = () => {
           </div>
         </div>
       </div>
-
+      <progress
+        className="progress progress-warning w-56"
+        value={0}
+        max="100"
+      ></progress>
+      <br />
+      <progress
+        className="progress progress-warning w-56"
+        value="10"
+        max="100"
+      ></progress>
+      <br />
+      <progress className="progress progress-warning w-56" value="40" max="100">
+        {" "}
+        <br />
+      </progress>{" "}
+      <br />
+      <progress className="progress progress-warning w-56" value="70" max="100">
+        {" "}
+        <br />
+      </progress>{" "}
+      <br />
+      <progress
+        className="progress progress-warning w-56"
+        value="100"
+        max="100"
+      ></progress>
       <NewArrival></NewArrival>
     </>
   );

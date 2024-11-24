@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import Image from "next/image";
@@ -62,10 +63,7 @@ const AboutCompany: React.FC = () => {
       <section className="mb-12 flex flex-col lg:flex-row items-center gap-8">
         {/* Text Section */}
         <div className="w-full lg:w-1/2">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">
-            {" "}
-            Our Mission
-          </h2>
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Mission</h2>
           <p className="text-gray-600 text-lg leading-relaxed">
             To provide high-quality, affordable, and trendy products that cater
             to the diverse fashion needs of individuals and families worldwide,

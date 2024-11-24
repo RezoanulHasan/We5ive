@@ -2,7 +2,7 @@
 "use client";
 import { productDatas } from "@/components/ProductData/ProductData";
 import React, { useState } from "react";
-import { FaCartPlus, FaInfoCircle } from "react-icons/fa";
+import { FaInfoCircle } from "react-icons/fa";
 import Link from "next/link";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
