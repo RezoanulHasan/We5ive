@@ -4,7 +4,12 @@ export const productDatas = [
     title: "Classic Winter Jacket",
     status: "New Arrival",
     season: "Winter",
-    images: ["winter_jacket1.jpg", "winter_jacket2.jpg"],
+    images: [
+      "https://img.freepik.com/premium-photo/young-hipster-man-with-laptop-hand-with-urban-look-city_75916-930.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/free-photo/young-woman-wearing-jacket-walking-outside_1303-25124.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/premium-photo/beautiful-girl-fashionable-hat-gloves-walking-down-street_160672-26866.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/free-photo/young-attractive-male-posing-nature_181624-46384.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+    ],
     price: 120,
     description: "A warm and stylish jacket perfect for winter outings.",
     reviews: 4.5,
@@ -14,7 +19,7 @@ export const productDatas = [
     category: "Outerwear",
     quantity: 31,
     sizes: ["XXL", "XL", "LG", "MD", "SM"],
-    colors: ["Red", "Black", "Blue"],
+    colors: ["Black", "Brown", "purple", "Green"],
     gender: "Men",
   },
   {
@@ -22,7 +27,12 @@ export const productDatas = [
     title: "Elegant Evening Gown",
     status: "New Arrival",
     season: "Winter",
-    images: ["evening_gown1.jpg", "evening_gown2.jpg"],
+    images: [
+      "https://img.freepik.com/free-photo/beautiful-bride-white-wedding-dress_144627-41225.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/premium-photo/girl-beautiful-black-dress-stands-near-window-looks-out-window_156140-2622.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/free-photo/young-sexy-blond-woman-model-evening-dress-posing-blue-sky-background_158538-9190.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/free-photo/front-view-elegant-girl-red-dress-leans-chair-looks-camera_8353-11655.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+    ],
     price: 220,
     description: "A stunning evening gown designed to make you shine.",
     reviews: 4.8,
@@ -32,7 +42,7 @@ export const productDatas = [
     category: "Dresses",
     quantity: 11,
     sizes: ["XXL", "XL", "LG", "MD", "SM"],
-    colors: ["White", "Black", "Green"],
+    colors: ["White", "Black", "Green", "Red"],
     gender: "Women",
   },
   {
@@ -40,7 +50,11 @@ export const productDatas = [
     title: "Stylish Kids Winter Coat",
     status: "New Arrival",
     season: "Winter",
-    images: ["kids_coat1.jpg", "kids_coat2.jpg"],
+    images: [
+      "https://img.freepik.com/premium-photo/adorable-happy-little-girl-outdoors-european-city_109800-2249.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/free-photo/young-woman-talking-phone_329181-14871.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/premium-photo/child-model-smile-with-long-blond-hair-girl-black-coat-pink-scarf-orange-background-kid-beauty-look-hairstyle-autumn-fashion-style-trend-happy-childhood-concept_474717-12067.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+    ],
     price: 80,
     description: "Keep your kids warm and stylish this winter.",
     reviews: 4.6,
@@ -50,7 +64,7 @@ export const productDatas = [
     category: "Outerwear",
     quantity: 91,
     sizes: ["XXL", "XL", "LG", "MD", "SM"],
-    colors: ["Blue", "Red", "Black"],
+    colors: ["SkyBlue", "Brown", "Black"],
     gender: "Kid",
   },
   {
@@ -58,7 +72,11 @@ export const productDatas = [
     title: "Summer Linen Shirt",
     status: "New Arrival",
     season: "Summer",
-    images: ["linen_shirt1.jpg", "linen_shirt2.jpg"],
+    images: [
+      "https://img.freepik.com/free-photo/young-man-streets-provincial-spanish-city_72229-592.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/free-photo/bottom-view-portrait-stylish-man_23-2148194058.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/premium-photo/portrait-handsome-bearded-man-shirt-beach_231834-3824.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+    ],
     price: 55,
     description: "Lightweight and breathable linen shirt for hot summer days.",
     reviews: 4.3,
@@ -68,15 +86,23 @@ export const productDatas = [
     category: "Shirts",
     quantity: 21,
     sizes: ["XXL", "XL", "LG", "MD", "SM"],
-    colors: ["White", "Green"],
+    colors: ["White", "Green", "Skyblue"],
     gender: "Men",
   },
+
   {
     id: "5",
     title: "Chic Summer Dress",
     status: "New Arrival",
     season: "Summer",
-    images: ["summer_dress1.jpg", "summer_dress2.jpg"],
+    images: [
+      "https://img.freepik.com/free-photo/attractive-young-woman-blue-dress-straw-hat-walking-tropical-spa-villa-hotel-vacation-summer-style-outfit-sexy_285396-2476.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/free-photo/happy-cute-romantic-caucasian-woman-summer-elegant-white-open-back-dress-straw-hat_343596-323.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/free-photo/stylish-woman-red-hat-blue-wall-printed-outfit-summer-style-fashion-trend-top-skirt-skinny-straw-handbag-sunglasses-accessories-smiling-tropical-vacation-footwear-sandals-wedge_285396-4252.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+
+      "https://img.freepik.com/free-photo/magnificent-positive-young-stylish-blogger-woman-posing-street-wearing-feminine-trendy-dress-straw-bag-soft-sunny-colors-summer-vacation-time_291049-2563.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+    ],
+
     price: 100,
     description: "A chic dress perfect for sunny summer days.",
     reviews: 4.7,
@@ -86,7 +112,7 @@ export const productDatas = [
     category: "Dresses",
     quantity: 41,
     sizes: ["XXL", "XL", "LG", "MD", "SM"],
-    colors: ["Blue", "White", "Red"],
+    colors: ["Blue", "White", "Red", "Skyblue"],
     gender: "Women",
   },
   {
@@ -94,7 +120,11 @@ export const productDatas = [
     title: "Kids Summer T-Shirt",
     status: "New Arrival",
     season: "Summer",
-    images: ["kids_tshirt1.jpg", "kids_tshirt2.jpg"],
+    images: [
+      "https://img.freepik.com/premium-photo/young-girl-summer-studio_401765-1265.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/premium-photo/adorable-boy-playing-beach-white-back-ground_58409-1043.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/premium-photo/close-up-boy-smiling-while-holding-hat_1048944-17833889.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+    ],
     price: 30,
     description: "Soft and colorful t-shirt for kids to enjoy summer fun.",
     reviews: 4.9,
@@ -104,7 +134,7 @@ export const productDatas = [
     category: "T-Shirts",
     quantity: 21,
     sizes: ["XXL", "XL", "LG", "MD", "SM"],
-    colors: ["Green", "Blue", "White"],
+    colors: ["White", "Green", "Blue"],
     gender: "Kid",
   },
   {
@@ -112,7 +142,11 @@ export const productDatas = [
     title: "Formal Men’s Suit",
     status: "Top Sell",
     season: "Winter",
-    images: ["formal_suit1.jpg", "formal_suit2.jpg"],
+    images: [
+      "https://img.freepik.com/free-photo/bouquet-beautiful-peonies-road_144627-4191.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/premium-photo/only-allow-effective-people-business-casual-style-giving-man-confidence-senior-employee-brutal-bearded-man-blue-formalwear-businessman-has-long-beard-hair-salon-barbershop_474717-21567.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/free-photo/portrait-happy-smiling-young-businessman-brown-suit-isolated-white-wall_231208-9214.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+    ],
     price: 300,
     description: "A premium suit for business and formal occasions.",
     reviews: 4.9,
@@ -122,15 +156,21 @@ export const productDatas = [
     category: "Suits",
     quantity: 31,
     sizes: ["XXL", "XL", "LG", "MD", "SM"],
-    colors: ["Black", "Blue"],
+    colors: ["Black", "Blue", "maroon"],
     gender: "Men",
   },
+
   {
     id: "8",
     title: "Women's Office Blazer",
     status: "Top Sell",
     season: "Winter",
-    images: ["office_blazer1.jpg", "office_blazer2.jpg"],
+    images: [
+      "https://img.freepik.com/premium-photo/beautiful-young-girl-autumn-park_104263-99.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/free-photo/portrait-young-business-lady_1163-3180.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/free-photo/smiling-woman-with-brown-jacket_1098-1290.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/free-photo/stylish-businesswoman-with-clipboard-city_23-2147989588.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+    ],
     price: 180,
     description: "A classic blazer for professional settings.",
     reviews: 4.6,
@@ -140,7 +180,7 @@ export const productDatas = [
     category: "Outerwear",
     quantity: 31,
     sizes: ["XXL", "XL", "LG", "MD", "SM"],
-    colors: ["Black", "White"],
+    colors: ["Black", "White", "maroon", "Gary"],
     gender: "Women",
   },
   {
@@ -148,7 +188,11 @@ export const productDatas = [
     title: "Casual Sneakers",
     status: "Upcoming",
     season: "Summer",
-    images: ["sneakers1.jpg", "sneakers2.jpg"],
+    images: [
+      "https://img.freepik.com/premium-photo/woman-holding-bouquet-flowers-with-her-bicycle-outdoors_23-2148765652.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/free-photo/girl-with-orange-shoes_144627-12935.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/free-photo/man-jeans-with-cardboard-bouquet-flowers_114579-2389.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+    ],
     price: 75,
     description: "Comfortable and stylish sneakers for everyday wear.",
     reviews: 4.5,
@@ -158,7 +202,7 @@ export const productDatas = [
     category: "Footwear",
     quantity: 41,
     sizes: ["XXL", "XL", "LG", "MD", "SM"],
-    colors: ["White", "Black", "Blue"],
+    colors: ["White", "Orange", "Blue"],
     gender: "Men",
   },
   {
@@ -166,7 +210,12 @@ export const productDatas = [
     title: "Stylish Kid’s Backpack",
     status: "Upcoming",
     season: "Summer",
-    images: ["kids_backpack1.jpg", "kids_backpack2.jpg"],
+    images: [
+      "https://img.freepik.com/premium-photo/modern-lifestyle-student-life-listen-music-headphones-teen-girl-open-backpack-lifestyle-education-back-school-school-education-adolescence-lifestyle-teen-girl-school-student-outdoor_474717-176764.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/premium-photo/sports-training-cute-primary-school-girl-white-tshirt-skirt-standing-big-sports-blue-bag-her-shoulder_465992-390.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/premium-photo/school-boy-holding-bag-smiling_130153-500.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/free-photo/cute-girl-with-schoolbag_144627-26605.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+    ],
     price: 50,
     description: "Perfect for school or travel, designed for kids.",
     reviews: 4.9,
@@ -176,7 +225,7 @@ export const productDatas = [
     category: "Accessories",
     quantity: 11,
     sizes: [],
-    colors: ["Blue", "Green", "Red"],
+    colors: ["Lime", "Blue", "Yellow", "Pink"],
     gender: "Kid",
   },
 
@@ -185,7 +234,11 @@ export const productDatas = [
     title: "Trendy Men’s Polo Shirt",
     status: "Upcoming",
     season: "Summer",
-    images: ["polo_shirt1.jpg", "polo_shirt2.jpg"],
+    images: [
+      "https://img.freepik.com/premium-photo/handsome-man-wearing-styled-sunglasses-marsala-clothes_136403-6716.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/premium-photo/portrait-young-man-standing-against-wall_1048944-23872785.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/premium-photo/distracted-caucasian-man-with-modern-clothes-tattoos-piercing-leaning-rail-park_475667-764.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+    ],
     price: 40,
     description: "A classic polo shirt for casual outings.",
     reviews: 4.5,
@@ -195,7 +248,7 @@ export const productDatas = [
     category: "Shirts",
     quantity: 12,
     sizes: ["XXL", "XL", "LG", "MD", "SM"],
-    colors: ["White", "Black", "Green"],
+    colors: ["Red", "SandyBrown", "Black"],
     gender: "Men",
   },
   {
@@ -203,7 +256,12 @@ export const productDatas = [
     title: "Elegant Women's Handbag",
     status: "Upcoming",
     season: "Summer",
-    images: ["handbag1.jpg", "handbag2.jpg"],
+    images: [
+      "https://img.freepik.com/free-photo/red-haired-girl-with-red-handbag-posed-near-vintage-house_627829-10025.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/free-photo/boots_1303-4425.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/free-photo/woman-striped-blazer-trousers-holding-small-blue-bag_140725-2687.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+      "https://img.freepik.com/free-photo/female-hands-close-up-holding-bag-flowers_1303-27882.jpg?ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+    ],
     price: 150,
     description: "A stylish handbag to complement your outfit.",
     reviews: 4.7,
@@ -213,7 +271,7 @@ export const productDatas = [
     category: "Accessories",
     quantity: 13,
     sizes: ["LG", "SM"],
-    colors: ["Black", "White", "Red"],
+    colors: ["Red", "Black", "SkyBlue", "NavajoWhite"],
     gender: "Women",
   },
   {
@@ -618,20 +676,28 @@ export const productDatas = [
 ];
 
 export interface Product {
-  id: string | null | undefined;
-  title: string | null | undefined;
-  status: string | null | undefined;
-  season: string | null | undefined;
-  images: string[] | null | undefined;
-  price: number | null | undefined;
-  description: string | null | undefined;
-  reviews: number | null | undefined;
-  stock: number | null;
-  likes: number | null;
-  comments: number | null;
-  category: string | null | undefined;
-  quantity: number | null | undefined;
-  sizes: string[] | null | undefined;
-  colors: string[] | null | undefined;
-  gender: string | null | undefined;
+  id: string;
+  title: string;
+  status: string;
+  season: string;
+  images?: string[];
+  price: number;
+  description: string;
+  reviews: number;
+  stock: number;
+  likes: number;
+  comments: string;
+  category: string;
+  quantity: number;
+  sizes: string[];
+  colors: string[];
+  gender: string;
 }
+export type Products = {
+  id: string;
+  title: string;
+  price: number;
+  images: string[];
+  colors?: string[];
+  status: string;
+};

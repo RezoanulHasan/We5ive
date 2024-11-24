@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @typescript-eslint/no-unsafe-function-type */
 /* eslint-disable @next/next/no-img-element */
 "use client";
@@ -17,6 +18,8 @@ import {
 } from "react-icons/fa";
 import Link from "next/link";
 import Signature from "@/components/shared/Signature/Signature";
+import galleryAnimation from "@/components/Hooks/GallerySection";
+import { motion } from "framer-motion";
 
 const AllProduct: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -83,7 +86,17 @@ const AllProduct: React.FC = () => {
   };
   return (
     <>
-      <div className="flex p-4  mt-24 rounded-lg">
+      <div className="text-center mb-2 mt-20">
+        <h1 className="text-4xl font-extrabold text-purple-700 mb-4">
+          Our All Product'𝓢
+        </h1>
+        <p className="text-lg text-gray-600">
+          Join thousands of satisfied customers redefining style and
+          sustainability. Together, let’s build a wardrobe that inspires
+          confidence and respects the environment.
+        </p>
+      </div>
+      <div className="flex p-4  mt-2 rounded-lg">
         {/* Filter Panel */}
         <div className="w-1/4 bg-custom p-4 rounded-lg shadow-lg mr-6">
           <h2 className="text-xl font-semibold mb-4">Filters</h2>
@@ -283,11 +296,14 @@ const AllProduct: React.FC = () => {
                 key={index}
                 className="border rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-200 relative"
               >
-                <img
+                <motion.img
+                  loading="lazy"
+                  variants={galleryAnimation}
+                  initial="hidden"
+                  animate="visible"
                   src={product.images[0]}
                   alt={product.title}
-                  className="w-full h-64 object-cover mb-6 rounded-t-xl"
-                  loading="lazy"
+                  className="w-full  object-cover mb-6 rounded-t-xl h-96"
                 />
 
                 <div className="absolute top-4 right-4 bg-[#6441C2] text-white text-sm font-bold p-2 rounded-full">

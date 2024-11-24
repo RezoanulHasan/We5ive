@@ -1,6 +1,8 @@
 "use client";
+import galleryAnimation from "@/components/Hooks/GallerySection";
 import Button from "@/components/shared/Button/Button";
-import Image from "next/image";
+import { motion } from "framer-motion";
+
 import React from "react";
 
 const AddsBanner: React.FC = () => {
@@ -26,8 +28,11 @@ const AddsBanner: React.FC = () => {
 
       <div className="flex justify-end">
         <div className="relative w-60 h-48 md:w-80 md:h-72 transform hover:scale-105 transition-all duration-500">
-          <Image
-            fill
+          <motion.img
+            variants={galleryAnimation}
+            initial="hidden"
+            animate="visible"
+            loading="lazy"
             src="https://static.vecteezy.com/system/resources/previews/047/656/906/non_2x/a-couple-in-business-attire-standing-together-free-png.png"
             alt="Promotional Offer"
             className="object-contain"

@@ -7,6 +7,8 @@ import Link from "next/link";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import CartButton from "@/components/shared/Button/CartButton/CartButton";
+import galleryAnimation from "@/components/Hooks/GallerySection";
+import { motion } from "framer-motion";
 
 const Summer: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
@@ -42,11 +44,14 @@ const Summer: React.FC = () => {
                 40%
               </div>
 
-              <img
+              <motion.img
+                variants={galleryAnimation}
+                initial="hidden"
+                animate="visible"
+                loading="lazy"
                 src={product.images[0]}
                 alt={product.title}
-                className="w-full h-64 object-cover mb-6 rounded-t-xl"
-                loading="lazy"
+                className="w-full object-cover mb-6 rounded-t-xl h-80"
               />
               <div className="px-4 pb-4">
                 <div className="flex justify-between items-center mb-4">

@@ -10,6 +10,8 @@ import useTitle from "@/components/Hooks/useTitle";
 import Link from "next/link";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import { motion } from "framer-motion";
+import galleryAnimation from "@/components/Hooks/GallerySection";
 
 const ShowCartItem: React.FC = () => {
   useTitle("Cart Items");
@@ -61,10 +63,14 @@ const ShowCartItem: React.FC = () => {
                 <div className="absolute top-4 right-4 bg-[#6441C2] text-white text-sm font-bold p-2 rounded-full">
                   Price: ${product.price}
                 </div>
-                <img
+                <motion.img
+                  variants={galleryAnimation}
+                  initial="hidden"
+                  animate="visible"
+                  loading="lazy"
                   src={product.images?.[0] || "/fallback-image.jpg"}
                   alt={product.title || "Product Image"}
-                  className="w-full h-40 object-cover rounded-md"
+                  className="w-full  object-cover rounded-md h-96"
                 />
 
                 <div className="flex justify-between items-center mb-4">
