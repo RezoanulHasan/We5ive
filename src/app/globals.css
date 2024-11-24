@@ -22,37 +22,3 @@ body {
 .button-custom {
   @apply bg-[#8f71e1] text-white hover:bg-[#7e63d6] transition duration-300 ease-in-out rounded-lg;
 }
-
-@keyframes fadeInOut {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes bounceIn {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-.animate-bounceIn {
-  animation: bounceIn 15s ease-out infinite;
-}
-
-.animate-fadeInOut {
-  animation: fadeInOut 9s ease-in-out infinite;
-}

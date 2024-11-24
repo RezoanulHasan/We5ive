@@ -27,10 +27,10 @@ const HomePage: React.FC = () => {
       </Container>
       <button
         onClick={handleScrollToTop}
-        className="absolute bottom-4 right-4 bg-black text-white rounded-full p-3"
+        className="absolute bottom-4 right-4 bg-[#29135fe5]   text-white rounded-full p-3"
         aria-label="Scroll to top"
       >
-        <AiOutlineArrowUp className="w-14 h-16 animate-bounce" />
+        <AiOutlineArrowUp className="w-10 h-10 animate-bounce" />
       </button>
     </div>
   );

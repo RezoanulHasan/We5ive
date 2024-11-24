@@ -86,8 +86,8 @@ const AllProduct: React.FC = () => {
   };
   return (
     <>
-      <div className="text-center mb-2 mt-20">
-        <h1 className="text-4xl font-extrabold text-purple-700 mb-4">
+      <div className="text-center  mt-20  bg-gray-50 p-3 ">
+        <h1 className="text-4xl font-extrabold text-purple-700 mb-2">
           Our All Product'𝓢
         </h1>
         <p className="text-lg text-gray-600">
@@ -96,7 +96,8 @@ const AllProduct: React.FC = () => {
           confidence and respects the environment.
         </p>
       </div>
-      <div className="flex p-4  mt-2 rounded-lg">
+
+      <div className="flex p-4  mt-2 rounded-lg  bg-gray-50  ">
         {/* Filter Panel */}
         <div className="w-1/4 bg-custom p-4 rounded-lg shadow-lg mr-6">
           <h2 className="text-xl font-semibold mb-4">Filters</h2>
@@ -301,7 +302,10 @@ const AllProduct: React.FC = () => {
                   variants={galleryAnimation}
                   initial="hidden"
                   animate="visible"
-                  src={product.images[0]}
+                  src={
+                    product.images?.[0] ||
+                    "https://static.vecteezy.com/system/resources/previews/025/262/295/non_2x/original-products-logo-design-and-original-icon-vector.jpg"
+                  }
                   alt={product.title}
                   className="w-full  object-cover mb-6 rounded-t-xl h-96"
                 />
@@ -357,7 +361,7 @@ const AllProduct: React.FC = () => {
                       className="flex items-center button-custom p-2"
                       aria-label={`View details for ${product.title}`}
                     >
-                      <FaInfoCircle className="mr-2 text-xl text-indigo-600" />
+                      <FaInfoCircle className="mr-2 text-xl text-white" />
                       View Details
                     </button>
                   </Link>

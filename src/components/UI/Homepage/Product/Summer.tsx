@@ -49,7 +49,10 @@ const Summer: React.FC = () => {
                 initial="hidden"
                 animate="visible"
                 loading="lazy"
-                src={product.images[0]}
+                src={
+                  product.images?.[0] ||
+                  "https://static.vecteezy.com/system/resources/previews/025/262/295/non_2x/original-products-logo-design-and-original-icon-vector.jpg"
+                }
                 alt={product.title}
                 className="w-full object-cover mb-6 rounded-t-xl h-80"
               />

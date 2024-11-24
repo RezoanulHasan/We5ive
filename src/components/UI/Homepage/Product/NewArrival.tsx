@@ -63,7 +63,10 @@ const ProductCard: React.FC<{ product: Products }> = ({ product }) => {
         variants={galleryAnimation}
         initial="hidden"
         animate="visible"
-        src={mainImage || "/fallback-image.jpg"} // Fallback image
+        src={
+          mainImage ||
+          "https://static.vecteezy.com/system/resources/previews/025/262/295/non_2x/original-products-logo-design-and-original-icon-vector.jpg"
+        } // Fallback image
         alt={product.title}
         loading="lazy"
         className="object-cover  w-full h-96 "

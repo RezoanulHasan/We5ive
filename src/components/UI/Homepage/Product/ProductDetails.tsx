@@ -52,7 +52,11 @@ const ProductDetails: React.FC = () => {
               initial="hidden"
               animate="visible"
               loading="lazy"
-              src={mainImage || product.images[0]}
+              src={
+                mainImage ||
+                product.images[0] ||
+                "https://static.vecteezy.com/system/resources/previews/025/262/295/non_2x/original-products-logo-design-and-original-icon-vector.jpg"
+              }
               alt={product.title}
               className="rounded-xl object-cover w-full"
             />
