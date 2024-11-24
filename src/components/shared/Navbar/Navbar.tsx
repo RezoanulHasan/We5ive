@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
         <Link href="/aboutCompany">Details</Link>
       </li>
       <li className="hover:bg-[#8260dfe5] hover:text-white">
-        <Link href="/dashboard">What's News</Link>
+        <Link href="/">What's News</Link>
       </li>
     </>
   );

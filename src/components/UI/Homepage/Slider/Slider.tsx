@@ -1,16 +1,17 @@
 "use client";
 
-import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./styles.css";
 import { Parallax, Pagination, Navigation } from "swiper/modules";
-import Image from "next/image";
-import { sliderData } from "./sliderData";
 
-export default function Slider() {
+import { sliderData } from "./sliderData";
+import { motion } from "framer-motion";
+import galleryAnimation from "@/components/Hooks/GallerySection";
+
+const Slider: React.FC = () => {
   return (
     <Swiper
       className="mySwiper"
@@ -32,12 +33,18 @@ export default function Slider() {
         <SwiperSlide key={index}>
           <div className="flex items-center justify-between p-6  rounded-lg ">
             <div className="w-1/2 ">
-              <Image
-                width={500}
-                height={300}
-                src={item.image}
+              <motion.img
+                variants={galleryAnimation}
+                initial="hidden"
+                animate="visible"
+                src={
+                  typeof item.image === "string"
+                    ? item.image
+                    : "https://static.vecteezy.com/system/resources/previews/025/262/295/non_2x/original-products-logo-design-and-original-icon-vector.jpg"
+                }
                 alt={item.title}
-                className="w-full h-auto object-cover  rounded-lg"
+                loading="lazy"
+                className="object-cover w-full h-96"
               />
             </div>
 
@@ -66,4 +73,6 @@ export default function Slider() {
       ))}
     </Swiper>
   );
-}
+};
+
+export default Slider;

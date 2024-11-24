@@ -20,6 +20,7 @@ import Link from "next/link";
 import Signature from "@/components/shared/Signature/Signature";
 import galleryAnimation from "@/components/Hooks/GallerySection";
 import { motion } from "framer-motion";
+import useTitle from "@/components/Hooks/useTitle";
 
 const AllProduct: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -29,7 +30,7 @@ const AllProduct: React.FC = () => {
   const [statusFilter, setStatusFilter] = useState<string | null>(null);
   const [seasonFilter, setSeasonFilter] = useState<string[]>([]);
   const [categoryFilter, setCategoryFilter] = useState<string[]>([]);
-
+  useTitle("ALL Product");
   // Filter products based on the applied filters
   const filteredProducts = productDatas
     .filter((product) =>

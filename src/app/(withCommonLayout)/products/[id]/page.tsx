@@ -1,5 +1,4 @@
 import ProductDetails from "@/components/UI/Homepage/Product/ProductDetails";
-import React from "react";
 
 const Page: React.FC = () => {
   return (

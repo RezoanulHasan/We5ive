@@ -706,3 +706,74 @@ export type Products = {
   colors?: string[];
   status: string;
 };
+export const data = [
+  {
+    icon: "🚚",
+    title: "FREE SHIPPING",
+    description: "BUY BDT 3000+ & GET FREE DELIVERY",
+  },
+  {
+    icon: "🔄",
+    title: "7 DAYS EXCHANGE",
+    description: "EXCHANGE WITHIN 7 DAYS WITH SIMILAR  PRODUCTS",
+  },
+
+  {
+    icon: "🔒",
+    title: "100% PAYMENT SECURE",
+    description: "CASH ON DELIVERY AND SECURED ONLINE PAYMENT",
+  },
+];
+
+export interface Comment {
+  id: number;
+  name: string;
+  review: number;
+  comment: string;
+  image: string;
+}
+
+export const commentData: Comment[] = [
+  {
+    id: 1,
+    name: "John Doe",
+    review: 4.5,
+    comment: "Great quality products and fast delivery! Highly recommend.",
+    image: "https://i.pravatar.cc/150?img=1",
+  },
+  {
+    id: 2,
+    name: "Jane Smith",
+    review: 5,
+    comment: "Absolutely love the trendy designs! Will shop again.",
+    image: "https://i.pravatar.cc/150?img=2",
+  },
+  {
+    id: 3,
+    name: "Samuel Green",
+    review: 4,
+    comment: "Good value for money, but shipping took a bit longer.",
+    image: "https://i.pravatar.cc/150?img=3",
+  },
+  {
+    id: 4,
+    name: "Emily Brown",
+    review: 5,
+    comment: "Fantastic experience! The kids' collection is so playful.",
+    image: "https://i.pravatar.cc/150?img=4",
+  },
+  {
+    id: 5,
+    name: "Michael Johnson",
+    review: 3.5,
+    comment: "Products are okay, but I expected better packaging.",
+    image: "https://i.pravatar.cc/150?img=5",
+  },
+  {
+    id: 6,
+    name: "Sophia Williams",
+    review: 4.8,
+    comment: "Stylish and comfortable clothing. Great for my whole family!",
+    image: "https://i.pravatar.cc/150?img=6",
+  },
+];
