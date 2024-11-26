@@ -111,7 +111,7 @@ const ProductCard: React.FC<{ product: Products }> = ({ product }) => {
             ${product.price}
           </p>
         </div>
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center gap-2">
           <CartButton product={product} />
           <Link href={`/products/${product.id}`}>
             <button

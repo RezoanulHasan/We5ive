@@ -355,7 +355,7 @@ const AllProduct: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="flex justify-between items-center mt-4">
+                <div className="flex justify-between items-center mt-4 gap-2">
                   <CartButton product={product} />
                   <Link href={`/products/${product.id}`}>
                     <button

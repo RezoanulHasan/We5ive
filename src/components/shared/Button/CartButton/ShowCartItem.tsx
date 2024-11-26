@@ -99,7 +99,7 @@ const ShowCartItem: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mt-4 flex justify-between items-center">
+                <div className="mt-4 flex justify-between items-center gap-2">
                   <Link href={`/products/${product.id}`}>
                     <button
                       className="flex items-center px-3 py-2  text-sm font-medium  button-custom btn"

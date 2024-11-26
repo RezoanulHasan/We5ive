@@ -16,6 +16,7 @@ import { motion } from "framer-motion";
 import Upcoming from "./Upcoming";
 import CommentSystem from "./CommentSystem";
 import ProgressSection from "./ProgressSection";
+import Details from "./Details";
 
 const ProductDetails: React.FC = () => {
   useTitle("Product Details");
@@ -90,82 +91,89 @@ const ProductDetails: React.FC = () => {
             </div>
           </div>
 
-          {/* Product Info Section */}
-          <div>
-            <h1 className="text-3xl font-bold text-gray-800 mb-4">
-              {product.title}
-            </h1>
-            <p className="text-gray-600 text-lg mb-6">{product.description}</p>
-            <p className="text-2xl font-semibold text-[#6441C2E5] mb-4">
-              ${product.price?.toFixed(2)}
-            </p>
-            <div className="flex items-center mb-4 gap-4">
-              <Rating
-                style={{ maxWidth: 120 }}
-                value={product.reviews ?? 0}
-                readOnly
-              />
-              <p className="text-gray-600 text-sm">
-                {product.reviews ?? 0} Stars
+          <div className="mb-8 mt-2 space-y-6  bg-custom-border">
+            {/* Product Info Section */}
+            <div>
+              <h1 className="text-3xl  text-gray-800 mb-4  font-semibold font-mono ">
+                {product.title}
+              </h1>
+              <p className="text-gray-600 text-lg mb-6">
+                {product.description}
               </p>
-              <div className="flex items-center gap-4">
-                <p className="text-gray-600 text-sm flex items-center">
-                  <FaRegHeart className="mr-2 text-red-500 text-xl" />
-                  {product.likes ?? 0} M Likes
+              <p className="text-2xl font-semibold text-[#6441C2E5] mb-4">
+                ${product.price?.toFixed(2)}
+              </p>
+              <div className="flex items-center mb-4 gap-4">
+                <Rating
+                  style={{ maxWidth: 120 }}
+                  value={product.reviews ?? 0}
+                  readOnly
+                />
+                <p className="text-gray-600 text-sm">
+                  {product.reviews ?? 0} Stars
                 </p>
-                <p className="text-gray-600 text-sm flex items-center">
-                  <FaComment className="mr-2 text-blue-500 text-xl" />
-                  {product.comments ?? 0} K Comments
-                </p>
+                <div className="flex items-center gap-4">
+                  <p className="text-gray-600 text-sm flex items-center">
+                    <FaRegHeart className="mr-2 text-red-500 text-xl" />
+                    {product.likes ?? 0} M Likes
+                  </p>
+                  <p className="text-gray-600 text-sm flex items-center">
+                    <FaComment className="mr-2 text-blue-500 text-xl" />
+                    {product.comments ?? 0} K Comments
+                  </p>
+                </div>
               </div>
+
+              <Details product={product} />
             </div>
 
-            {/* Color Buttons */}
-            <div className="mb-6">
-              <h2 className="text-lg font-semibold text-gray-800 mb-2">
-                Select Color
-              </h2>
-              <div className="flex gap-2">
-                {product.colors?.map((color, index) => (
-                  <button
-                    key={color}
-                    className={`w-10 h-10 rounded-full border-2 ${
-                      selectedColor === color
-                        ? "border-[#6441C2E5]"
-                        : "border-gray-300"
-                    }`}
-                    style={{ backgroundColor: color }}
-                    onClick={() => {
-                      setSelectedColor(color);
-                      setMainImage(product.images[index]); // Map color to image by index
-                    }}
-                  />
-                ))}
+            <div className=" flex flex-col md:flex-row  gap-2  justify-between">
+              {/* Color Buttons */}
+              <div className="mb-6">
+                <h2 className="text-lg font-semibold text-gray-800 mb-2">
+                  Select Color
+                </h2>
+                <div className="flex gap-2">
+                  {product.colors?.map((color, index) => (
+                    <button
+                      key={color}
+                      className={`w-10 h-10 rounded-full border-2 ${
+                        selectedColor === color
+                          ? "border-[#6441C2E5]"
+                          : "border-gray-300"
+                      }`}
+                      style={{ backgroundColor: color }}
+                      onClick={() => {
+                        setSelectedColor(color);
+                        setMainImage(product.images[index]); // Map color to image by index
+                      }}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Size Selection */}
+              <div className="mb-6">
+                <h2 className="text-lg font-semibold text-gray-800 mb-2">
+                  Select Size
+                </h2>
+                <div className="flex gap-2">
+                  {product.sizes?.map((size) => (
+                    <button
+                      key={size}
+                      className={`px-4 py-2 rounded-lg border text-sm font-semibold ${
+                        selectedSize === size
+                          ? "bg-[#6441C2E5] text-white"
+                          : "border-gray-300 text-gray-800"
+                      }`}
+                      onClick={() => setSelectedSize(size)}
+                    >
+                      {size}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
-
-            {/* Size Selection */}
-            <div className="mb-6">
-              <h2 className="text-lg font-semibold text-gray-800 mb-2">
-                Select Size
-              </h2>
-              <div className="flex gap-2">
-                {product.sizes?.map((size) => (
-                  <button
-                    key={size}
-                    className={`px-4 py-2 rounded-lg border text-sm font-semibold ${
-                      selectedSize === size
-                        ? "bg-[#6441C2E5] text-white"
-                        : "border-gray-300 text-gray-800"
-                    }`}
-                    onClick={() => setSelectedSize(size)}
-                  >
-                    {size}
-                  </button>
-                ))}
-              </div>
-            </div>
-
             {/* Quantity Selection */}
             <div className="mb-6">
               <h2 className="text-lg font-semibold text-gray-800 mb-2">
@@ -182,9 +190,24 @@ const ProductDetails: React.FC = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 gap-2">
               <CartButton product={product} />
               <ShareWishlistButton></ShareWishlistButton>
+            </div>
+
+            {/* 100% safe checkout cards */}
+            <div className="mt-4 py-2 px-6  bg-custom-border          ">
+              <p className="text-sm text-custom-black font-semibold mb-2">
+                100% Guarantee Safe Checkout
+              </p>
+              <motion.img
+                variants={galleryAnimation}
+                initial="hidden"
+                animate="visible"
+                src="https://i0.wp.com/365webresources.com/wp-content/uploads/2021/12/Payment-Methods-Icon-Set-Figma.png?ssl=1"
+                alt=" PaymentMethod"
+                className=" w-full object-cover rounded-lg"
+              />
             </div>
           </div>
         </div>

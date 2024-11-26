@@ -705,7 +705,17 @@ export type Products = {
   images: string[];
   colors?: string[];
   status: string;
+  stock: number;
+  likes: number;
 };
+
+export interface DetailsPageProduct {
+  category: string;
+  stock: number;
+  season: string;
+  gender: string;
+  quantity: number;
+}
 export const data = [
   {
     icon: "🚚",
@@ -776,4 +786,68 @@ export const commentData: Comment[] = [
     comment: "Stylish and comfortable clothing. Great for my whole family!",
     image: "https://i.pravatar.cc/150?img=6",
   },
+];
+export const questions = [
+  {
+    id: 1,
+    question: "What payment methods do you accept?",
+    answer:
+      "We accept all major credit and debit cards, as well as online payment platforms like PayPal, Google Pay, and Apple Pay.",
+  },
+  {
+    id: 2,
+    question: "Can I cancel or change my order?",
+    answer:
+      "Yes, you can cancel or modify your order within 24 hours of placing it. After this period, processing begins, and changes may not be possible.",
+  },
+  {
+    id: 3,
+    question: "How long does shipping take?",
+    answer:
+      "Shipping typically takes 5-7 business days for domestic orders and 10-15 business days for international orders.",
+  },
+  {
+    id: 4,
+    question: "Do you offer discounts or promotions?",
+    answer:
+      "Yes, we regularly offer discounts and promotions. Subscribe to our newsletter to stay updated on the latest deals.",
+  },
+  {
+    id: 5,
+    question: "Is there a warranty on the products?",
+    answer:
+      "Most of our products come with a warranty. Details can be found in the product description or by contacting customer support.",
+  },
+];
+
+export const images = [
+  "https://img.freepik.com/free-photo/full-shot-woman-carrying-bag_23-2149988408.jpg?uid=R154375610&ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+  "https://img.freepik.com/free-photo/young-stylish-hipster-woman-sitting-pool-tropical-vacation-carefree-natural-beauty-holding-shoes-her-hands-red-lips_285396-3915.jpg?uid=R154375610&ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+  "https://img.freepik.com/free-photo/elegant-brunette-female-sexy-dress-posing-stylish-beach-restaurant-asian-style_273443-3197.jpg?uid=R154375610&ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+  "https://img.freepik.com/free-photo/woman-with-shopping-bags-studio-yellow-background-isolated_1303-14291.jpg?uid=R154375610&ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+  "https://img.freepik.com/free-photo/portrait-beautiful-stylish-young-woman_158538-4163.jpg?uid=R154375610&ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+  "https://img.freepik.com/free-photo/full-shot-woman-posing-with-dynamic-shapes_23-2149988402.jpg?uid=R154375610&ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+  "https://img.freepik.com/free-photo/portrait-beautiful-stylish-young-woman_158538-4016.jpg?uid=R154375610&ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+  "https://img.freepik.com/free-photo/fashionable-woman-pink-coat-black-hat-posing_273443-2423.jpg?uid=R154375610&ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+  "https://img.freepik.com/free-photo/high-fashion-look-glamor-closeup-portrait-beautiful-sexy-stylish-brunette-business-young-woman-model-white-coat-jacket-hipster-cloth-jeans_158538-2815.jpg?uid=R154375610&ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+  "https://img.freepik.com/free-photo/young-happy-woman-relaxing-with-tasty-fresh-orange-juice-trendy-boho-tropical-outfit-her-vacations_273443-2253.jpg?uid=R154375610&ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+  "https://img.freepik.com/free-photo/young-woman-with-long-red-hair-linen-dress-gathering-mushrooms-forest_1321-1505.jpg?uid=R154375610&ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+  "https://img.freepik.com/free-photo/young-woman-beautiful-dress-hat_1303-17517.jpg?uid=R154375610&ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+  "https://img.freepik.com/free-photo/beautiful-girl-sitting-ground_8353-5090.jpg?uid=R154375610&ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+  "https://img.freepik.com/free-photo/young-woman-business-suit-wearing-hat_1303-17700.jpg?uid=R154375610&ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+  "https://img.freepik.com/free-photo/sexy-stylish-woman-fashion-party-outfit-summer-vacation-with-glass-cocktail-having-fun-pool_285396-4026.jpg?uid=R154375610&ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+];
+
+export const manImages = [
+  "https://img.freepik.com/free-photo/portrait-handsome-fashion-stylish-hipster-businessman-model-dressed-elegant-blue-suit-posing-gray_158538-4489.jpg?uid=R154375610&ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+
+  "https://img.freepik.com/free-photo/young-stylish-handsome-man-suit-street_158538-10195.jpg?uid=R154375610&ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+
+  "https://img.freepik.com/free-photo/fashionable-man-posing_144627-28363.jpg?uid=R154375610&ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+
+  "https://img.freepik.com/free-photo/handsome-man-posing-outdoors_23-2148323623.jpg?uid=R154375610&ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+
+  "https://img.freepik.com/free-photo/handsome-man-with-stylish-glasses_23-2148323611.jpg?uid=R154375610&ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
+
+  "https://img.freepik.com/free-photo/young-handsome-man-street-outfit_1303-19658.jpg?uid=R154375610&ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
 ];

@@ -2,10 +2,15 @@
 import Container from "@/components/shared/Container/Container";
 import AddsBanner from "@/components/UI/Homepage/AddsBanner";
 import Banner from "@/components/UI/Homepage/Banner";
+
 import FeaturesGrid from "@/components/UI/Homepage/FeaturesGrid";
+import Gallery from "@/components/UI/Homepage/Gallery";
+import PeopleAskQuestion from "@/components/UI/Homepage/PeopleAskQuestion";
+
 import NewArrival from "@/components/UI/Homepage/Product/NewArrival";
 import Summer from "@/components/UI/Homepage/Product/Summer";
 import Slider from "@/components/UI/Homepage/Slider/Slider";
+import Support from "@/components/UI/Homepage/support";
 
 import { AiOutlineArrowUp } from "react-icons/ai";
 const HomePage: React.FC = () => {
@@ -20,9 +25,13 @@ const HomePage: React.FC = () => {
         <NewArrival />
         <AddsBanner />
         <Slider />
-        <Summer />
-      </Container>
 
+        <Summer />
+        <PeopleAskQuestion></PeopleAskQuestion>
+        <Gallery></Gallery>
+
+        <Support></Support>
+      </Container>
       <div>
         <button
           onClick={handleScrollToTop}
