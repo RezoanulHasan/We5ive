@@ -213,16 +213,63 @@ const ShowCartItem: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {cartItemsMemo}
           </div>
-          <div className="mt-8 bg-gray-100 p-6 rounded-lg text-center">
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">
+          <div className="mt-8 bg-gray-100 p-6 rounded-lg">
+            <h2 className="text-xl font-semibold text-gray-800 mb-4 text-center">
               Summary
             </h2>
-            <p className="mb-2">Total Products: {cartItems.length}</p>
-            <p className="mb-2">Total Items: {totalItems}</p>
-            <p className="mb-2">Total Price: ${totalPrice.toFixed(2)}</p>
-            <button className="px-6 py-3 bg-green-600 text-white rounded-md mt-4 hover:bg-green-700">
-              Checkout
-            </button>
+            <p className="mb-2 text-center">
+              Total Products: {cartItems.length}
+            </p>
+            <p className="mb-2 text-center">Total Items: {totalItems}</p>
+            <p className="mb-2 text-center">
+              Total Price: ${totalPrice.toFixed(2)}
+            </p>
+
+            <div className="mt-6">
+              <h3 className="text-lg font-semibold text-gray-800 mb-4">
+                Product Details:
+              </h3>
+              {cartItems.map((item) => (
+                <div
+                  key={item.id}
+                  className="mb-4 border-b border-gray-300 pb-4"
+                >
+                  <p className="font-semibold text-gray-800">
+                    Title: <span className="text-gray-600">{item.title}</span>
+                  </p>
+                  <p className="font-semibold text-gray-800">
+                    Selected Color:{" "}
+                    <span
+                      className="inline-block w-6 h-6 rounded-full border"
+                      style={{
+                        backgroundColor: selectedColor[item.id] || "#ccc",
+                        borderColor: selectedColor[item.id]
+                          ? "#ccc"
+                          : "transparent",
+                      }}
+                    ></span>
+                  </p>
+                  <p className="font-semibold text-gray-800">
+                    Selected Size:{" "}
+                    <span className="text-gray-600">
+                      {selectedSize[item.id] || "Not Selected"}
+                    </span>
+                  </p>
+                  <p className="font-semibold text-gray-800">
+                    Season: <span className="text-gray-600">{item.season}</span>
+                  </p>
+                  <p className="font-semibold text-gray-800">
+                    Category:{" "}
+                    <span className="text-gray-600">{item.category}</span>
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className="flex justify-center items-center">
+              <button className="px-6 py-3 bg-green-600 text-white rounded-md mt-4 hover:bg-green-700">
+                Checkout
+              </button>
+            </div>
           </div>
         </>
       )}
