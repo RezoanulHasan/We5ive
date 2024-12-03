@@ -23,7 +23,7 @@ const ProductDetails: React.FC = () => {
 
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
-  const [selectedQuantity, setSelectedQuantity] = useState<number>(1);
+
   const [mainImage, setMainImage] = useState<string | null>(null);
 
   const { id } = useParams();
@@ -47,7 +47,7 @@ const ProductDetails: React.FC = () => {
 
   return (
     <>
-      <div className="container mx-auto p-6 mt-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-20 ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           {/* Main Image Section */}
           <div>
@@ -91,21 +91,21 @@ const ProductDetails: React.FC = () => {
             </div>
           </div>
 
-          <div className="mb-8 mt-2 space-y-6  bg-custom-border">
-            {/* Product Info Section */}
+          {/* Product Details Section */}
+          <div className="space-y-6  md:space-y-3">
             <div>
-              <h1 className="text-3xl  text-gray-800 mb-4  font-semibold font-mono ">
+              <h1 className="text-2xl md:text-3xl font-semibold font-mono text-gray-800 mb-4">
                 {product.title}
               </h1>
-              <p className="text-gray-600 text-lg mb-6">
+              <p className="text-gray-600 text-sm sm:text-base mb-6">
                 {product.description}
               </p>
-              <p className="text-2xl font-semibold text-[#6441C2E5] mb-4">
+              <p className="text-xl md:text-2xl font-semibold text-[#6441C2E5] mb-4">
                 ${product.price?.toFixed(2)}
               </p>
               <div className="flex items-center mb-4 gap-4">
                 <Rating
-                  style={{ maxWidth: 120 }}
+                  style={{ maxWidth: 100 }}
                   value={product.reviews ?? 0}
                   readOnly
                 />
@@ -114,16 +114,15 @@ const ProductDetails: React.FC = () => {
                 </p>
                 <div className="flex items-center gap-4">
                   <p className="text-gray-600 text-sm flex items-center">
-                    <FaRegHeart className="mr-2 text-red-500 text-xl" />
-                    {product.likes ?? 0} M Likes
+                    <FaRegHeart className="mr-2 text-red-500 text-lg md:text-xl" />
+                    {product.likes ?? 0} Likes
                   </p>
                   <p className="text-gray-600 text-sm flex items-center">
-                    <FaComment className="mr-2 text-blue-500 text-xl" />
-                    {product.comments ?? 0} K Comments
+                    <FaComment className="mr-2 text-blue-500 text-lg md:text-xl" />
+                    {product.comments ?? 0} Comments
                   </p>
                 </div>
               </div>
-
               <Details product={product} />
             </div>
 
@@ -161,7 +160,7 @@ const ProductDetails: React.FC = () => {
                   {product.sizes?.map((size) => (
                     <button
                       key={size}
-                      className={`px-4 py-2 rounded-lg border text-sm font-semibold ${
+                      className={`px-3 py-1 sm:px-4 sm:py-2 rounded-lg border text-sm font-semibold ${
                         selectedSize === size
                           ? "bg-[#6441C2E5] text-white"
                           : "border-gray-300 text-gray-800"
@@ -174,25 +173,11 @@ const ProductDetails: React.FC = () => {
                 </div>
               </div>
             </div>
-            {/* Quantity Selection */}
-            <div className="mb-6">
-              <h2 className="text-lg font-semibold text-gray-800 mb-2">
-                Quantity
-              </h2>
-              <input
-                type="number"
-                value={selectedQuantity}
-                onChange={(e) => setSelectedQuantity(Number(e.target.value))}
-                min={1}
-                max={product.quantity || 10}
-                className="px-4 py-2 border border-gray-300 rounded-md w-full"
-              />
-            </div>
 
             {/* Action Buttons */}
-            <div className="flex space-x-4 gap-2">
+            <div className="flex flex-col sm:flex-row gap-2 mt-8 mb-8">
               <CartButton product={product} />
-              <ShareWishlistButton></ShareWishlistButton>
+              <ShareWishlistButton />
             </div>
 
             {/* 100% safe checkout cards */}
@@ -213,7 +198,7 @@ const ProductDetails: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-7 p-4 sm:p-6 md:p-8 lg:p-10 bg-custom rounded-lg">
+      <div className="flex flex-col lg:flex-row gap-7 p-4 sm:p-6 md:p-8 lg:p-10 bg-custom rounded-lg mt-8 mb-4">
         {/* Comment System Section */}
         <div className="flex-1">
           <div className="grid grid-cols-3  text-lg  gap-2  font-medium">

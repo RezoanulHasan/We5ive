@@ -1,26 +1,26 @@
+"use client";
+
 import { DetailsPageProduct } from "@/components/ProductData/ProductData";
 import React from "react";
 import { FaWarehouse, FaLeaf, FaVenusMars } from "react-icons/fa";
 
-// Props interface for the Details component
 interface DetailsProps {
   product: DetailsPageProduct;
 }
 
 const Details: React.FC<DetailsProps> = ({ product }) => {
   return (
-    <div>
+    <div className="p-4 sm:p-6 lg:p-10">
       {/* Category */}
-      <div className="mt-10 mb-4 text-2xl text-center text-gray-700 flex items-center justify-center gap-3 font-mono">
+      <div className="mt-6 mb-4 text-2xl text-center text-gray-700 flex flex-col sm:flex-row items-center justify-center gap-3 font-mono">
         <p className="font-semibold">
-          Category:
-          <span className="text-[#6441C2E5]">{product.category}</span>
+          Category: <span className="text-[#6441C2E5]">{product.category}</span>
         </p>
       </div>
 
       {/* Stock Information */}
-      <div className="flex flex-row   gap-8 text-lg mt-7  ">
-        <div className="flex items-center gap-3 ">
+      <div className="flex flex-wrap gap-6 sm:gap-8 text-lg mt-7 justify-center sm:justify-start">
+        <div className="flex items-center gap-3">
           <FaWarehouse className="text-green-500 text-xl" />
           <span className="text-gray-600 font-semibold">Stock:</span>
           <span
@@ -34,23 +34,21 @@ const Details: React.FC<DetailsProps> = ({ product }) => {
           </span>
         </div>
         <p className="font-semibold">
-          {" "}
-          Available Stook:{" "}
+          Available Stock:{" "}
           <span className="text-[#6441C2E5] font-mono text-2xl">
             {product.stock}
-          </span>{" "}
+          </span>
         </p>
         <p className="font-semibold">
-          {" "}
-          UpComing:{" "}
+          Upcoming:{" "}
           <span className="text-[#6441C2E5] font-mono text-2xl">
             {product.quantity}
-          </span>{" "}
+          </span>
         </p>
       </div>
 
       {/* Additional Details */}
-      <div className="text-xl flex justify-between gap-5 space-y-2 mt-3">
+      <div className="text-xl flex flex-wrap sm:flex-nowrap justify-between gap-6 sm:gap-8 space-y-3 sm:space-y-0 mt-6">
         <div className="flex items-center gap-3">
           <FaLeaf className="text-green-500 text-lg" />
           <p className="font-semibold">
@@ -62,9 +60,7 @@ const Details: React.FC<DetailsProps> = ({ product }) => {
           <FaVenusMars className="text-blue-500 text-lg" />
           <p className="font-semibold">
             𝓖𝓮𝓷𝓭𝓮𝓻:{" "}
-            <span className="text-[#6441C2E5] font-mono ">
-              {product.gender}
-            </span>
+            <span className="text-[#6441C2E5] font-mono">{product.gender}</span>
           </p>
         </div>
       </div>

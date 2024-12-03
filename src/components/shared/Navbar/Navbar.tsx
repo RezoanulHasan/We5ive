@@ -14,17 +14,17 @@ const Navbar: React.FC = () => {
 
   const navOptions = (
     <>
-      <li className="hover:bg-[#8260dfe5] hover:text-white">
+      <li className="text-nav ">
         <Link href="/">Home</Link>
       </li>
 
-      <li className="hover:bg-[#8260dfe5] hover:text-white">
+      <li className="text-nav ">
         <Link href="/allProduct">Shop</Link>
       </li>
-      <li className="hover:bg-[#8260dfe5] hover:text-white">
+      <li className="text-nav ">
         <Link href="/aboutCompany">Details</Link>
       </li>
-      <li className="hover:bg-[#8260dfe5] hover:text-white">
+      <li className="text-nav ">
         <Link href="/">What's News</Link>
       </li>
     </>
@@ -39,7 +39,11 @@ const Navbar: React.FC = () => {
       <div className="navbar fixed z-50 top-0 bg-opacity-30 bg-base-100 shadow-sm mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost lg:hidden bg-custom"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -57,15 +61,15 @@ const Navbar: React.FC = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white text-2xl rounded-box w-52"
             >
               {navOptions}
             </ul>
           </div>
           <MainLogo></MainLogo>
         </div>
-        <div className="navbar-center hidden lg:flex   ">
-          <ul className="menu menu-horizontal px-1     ">{navOptions}</ul>
+        <div className="navbar-center hidden lg:flex ">
+          <ul className="menu menu-horizontal px-1  ">{navOptions}</ul>
         </div>
 
         <div className="navbar-end gap-6">

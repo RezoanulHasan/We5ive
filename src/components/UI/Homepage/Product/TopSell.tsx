@@ -1,5 +1,4 @@
 "use client";
-
 import { productDatas } from "@/components/ProductData/ProductData";
 import React from "react";
 import { FaInfoCircle } from "react-icons/fa";

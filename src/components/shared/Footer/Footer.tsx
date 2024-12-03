@@ -1,8 +1,9 @@
+"use client";
 import React from "react";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import MainLogo from "../Navbar/MainLogo";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <>
       <footer className="relative mt-6 bg-gray-800 text-white py-10">

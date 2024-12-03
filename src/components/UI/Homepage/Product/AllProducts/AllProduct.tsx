@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @typescript-eslint/no-unsafe-function-type */
 /* eslint-disable @next/next/no-img-element */
@@ -15,6 +16,8 @@ import {
   FaLeaf,
   FaLayerGroup,
   FaSearch,
+  FaArrowLeft,
+  FaArrowRight,
 } from "react-icons/fa";
 import Link from "next/link";
 import Signature from "@/components/shared/Signature/Signature";
@@ -30,6 +33,9 @@ const AllProduct: React.FC = () => {
   const [statusFilter, setStatusFilter] = useState<string | null>(null);
   const [seasonFilter, setSeasonFilter] = useState<string[]>([]);
   const [categoryFilter, setCategoryFilter] = useState<string[]>([]);
+  //Pagination
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const itemsPerPage = 6;
   useTitle("ALL Product");
   // Filter products based on the applied filters
   const filteredProducts = productDatas
@@ -66,6 +72,19 @@ const AllProduct: React.FC = () => {
     return 0;
   });
 
+  // Pagination logic
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+  const paginatedProducts = sortedProducts.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+  const handlePageChange = (page: number) => {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page);
+    }
+  };
+
   // Toggle checkboxes for season and category filters
   const toggleFilter = (filter: string, value: string, setFilter: Function) => {
     setFilter((prev: string[]) =>
@@ -85,6 +104,7 @@ const AllProduct: React.FC = () => {
     setSeasonFilter([]);
     setCategoryFilter([]);
   };
+
   return (
     <>
       <div className="text-center  mt-20  bg-gray-50 p-3 ">
@@ -96,12 +116,22 @@ const AllProduct: React.FC = () => {
           sustainability. Together, let’s build a wardrobe that inspires
           confidence and respects the environment.
         </p>
+        <div className="flex md:flex-row  flex-col md:gap-10  gap:2 p-2 m-2  justify-center items-center">
+          <p className="text-2xl  font-semibold     text-purple-700">
+            Total Product:{productDatas.length}
+          </p>
+          <p className="text-2xl  font-semibold     text-purple-700">
+            Product Per Page:{paginatedProducts.length}
+          </p>
+        </div>
       </div>
 
-      <div className="flex p-4  mt-2 rounded-lg  bg-gray-50  ">
+      <div className="flex    md:flex-row  flex-col p-4  mt-2 rounded-lg  bg-gray-50  ">
         {/* Filter Panel */}
-        <div className="w-1/4 bg-custom p-4 rounded-lg shadow-lg mr-6">
-          <h2 className="text-xl font-semibold mb-4">Filters</h2>
+        <div className=" w-full md:w-1/4 bg-custom p-4 rounded-lg shadow-lg mr-6">
+          <h2 className="mb-4 text-2xl  font-semibold     text-purple-700">
+            Products Filters
+          </h2>
 
           {/* Search Filter */}
           <div className="mb-4">
@@ -118,8 +148,10 @@ const AllProduct: React.FC = () => {
           </div>
 
           {/* Filter by Gender */}
-          <div className="mb-4">
-            <h3 className="text-sm font-semibold text-gray-700 mb-2">Gender</h3>
+          <div className="mb-4  ">
+            <h3 className="mb-2 text-xl  font-semibold     text-purple-700">
+              Gender
+            </h3>
             <div className="flex flex-col space-y-2">
               {["Men", "Women", "Kid"].map((gender, index) => (
                 <label key={index} className="flex items-center">
@@ -138,7 +170,9 @@ const AllProduct: React.FC = () => {
 
           {/* Filter by Season */}
           <div className="mb-4">
-            <h3 className="text-sm font-semibold text-gray-700 mb-2">Season</h3>
+            <h3 className="text-xl  font-semibold     text-purple-700 mb-2">
+              Season
+            </h3>
             {["Winter", "All Season", "Summer"].map((season) => (
               <label key={season} className="flex items-center mb-2">
                 <input
@@ -156,7 +190,9 @@ const AllProduct: React.FC = () => {
 
           {/* Filter by Status */}
           <div className="mb-4">
-            <h3 className="text-sm font-semibold text-gray-700 mb-2">Status</h3>
+            <h3 className="text-xl  font-semibold     text-purple-700 mb-2">
+              Status
+            </h3>
             <div className="flex flex-col space-y-2">
               {["Regular", "Upcoming", "Top Sell", "New Arrival"].map(
                 (status, index) => (
@@ -176,7 +212,7 @@ const AllProduct: React.FC = () => {
           </div>
           {/* Filter by Category */}
           <div className="mb-4">
-            <h3 className="text-sm font-semibold text-gray-700 mb-2">
+            <h3 className="text-xl font-semibold text-purple-700 mb-2">
               Category
             </h3>
             {[
@@ -205,7 +241,7 @@ const AllProduct: React.FC = () => {
           </div>
           {/* Sorting by Price */}
           <div className="mb-4">
-            <h3 className="text-sm font-semibold text-gray-700 mb-2">
+            <h3 className="text-xl  font-semibold text-purple-700 mb-2">
               Sort by Price
             </h3>
             <div className="flex flex-col space-y-2">
@@ -249,7 +285,7 @@ const AllProduct: React.FC = () => {
 
           {/* Filter by Price Range */}
           <div className="mb-4">
-            <h3 className="text-sm font-semibold text-gray-700 mb-2">
+            <h3 className="text-xl  font-semibold     text-purple-700   mb-2">
               Price Range
             </h3>
             <div className="flex flex-col space-y-2">
@@ -258,7 +294,7 @@ const AllProduct: React.FC = () => {
                 { label: "$51 - $150", range: [51, 150] },
                 { label: "$151 - $250", range: [151, 250] },
                 { label: "$251 - $500", range: [251, 500] },
-              ].map((priceOption, index) => (
+              ]?.map((priceOption, index) => (
                 <label key={index} className="flex items-center">
                   <input
                     type="radio"
@@ -291,9 +327,9 @@ const AllProduct: React.FC = () => {
         </div>
 
         {/* Product Listing */}
-        <div className="w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4  bg-custom  rounded-lg ">
-          {sortedProducts.length > 0 ? (
-            sortedProducts?.map((product, index) => (
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4  bg-custom  rounded-lg md:mt-0 mt-5 p-2 ">
+          {paginatedProducts.length > 0 ? (
+            paginatedProducts?.map?.((product, index) => (
               <div
                 key={index}
                 className="border rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-200 relative"
@@ -377,6 +413,50 @@ const AllProduct: React.FC = () => {
         </div>
       </div>
 
+      {/* Pagination Controls */}
+
+      <div className="flex justify-center items-center mt-6 space-x-2 mx-2   bg-gray-50 p-3">
+        {/* Previous Button */}
+        <button
+          className={`flex items-center px-3 py-2 rounded-lg font-medium transition-colors duration-300 shadow-md ${
+            currentPage === 1
+              ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+              : "bg-purple-500 text-white hover:bg-purple-600"
+          }`}
+          disabled={currentPage === 1}
+          onClick={() => handlePageChange(currentPage - 1)}
+        >
+          <FaArrowLeft className="mr-2" /> Previous
+        </button>
+
+        {/* Page Numbers */}
+        {[...Array(totalPages)]?.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => handlePageChange(index + 1)}
+            className={`px-4 py-2 rounded-lg font-medium transition-colors duration-300 shadow-md ${
+              currentPage === index + 1
+                ? "bg-purple-600 text-white hover:bg-purple-700"
+                : "bg-gray-100 text-gray-700 hover:bg-gray-300"
+            }`}
+          >
+            {index + 1}
+          </button>
+        ))}
+
+        {/* Next Button */}
+        <button
+          className={`flex items-center px-3 py-2 rounded-lg font-medium transition-colors duration-300 shadow-md ${
+            currentPage === totalPages
+              ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+              : "bg-purple-500 text-white hover:bg-purple-600"
+          }`}
+          disabled={currentPage === totalPages}
+          onClick={() => handlePageChange(currentPage + 1)}
+        >
+          Next <FaArrowRight className="ml-2" />
+        </button>
+      </div>
       <Signature></Signature>
     </>
   );

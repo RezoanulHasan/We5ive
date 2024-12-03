@@ -3,6 +3,7 @@
 import React from "react";
 import Button from "@/components/shared/Button/Button";
 import mainBanner from "../../../assets/mainBanner.jpg";
+import Features from "./Features";
 const Banner: React.FC = () => {
   return (
     <div
@@ -23,7 +24,7 @@ const Banner: React.FC = () => {
           𝓓𝓲𝓼𝓬𝓸𝓿𝓮𝓻 𝓽𝓱𝓮 𝓛𝓪𝓽𝓮𝓼𝓽 𝓣𝓻𝓮𝓷𝓭𝓼 𝓲𝓷 𝓢𝓾𝓼𝓽𝓪𝓲𝓷𝓪𝓫𝓵𝓮 𝓕𝓪𝓼𝓱𝓲𝓸𝓷
         </p>
 
-        <div className="text-white max-w-[800px] space-y-4 text-sm mb-5">
+        <div className="text-white max-w-[800px] space-y-4 text-sm md:mb-10  mb-5">
           <p>
             <span className="font-semibold text-xl text-[#dad1efe5]">
               𝓐𝓽 𝓦𝓮5𝓲𝓿𝓮
@@ -35,6 +36,8 @@ const Banner: React.FC = () => {
         </div>
 
         <Button />
+
+        <Features></Features>
       </div>
     </div>
   );

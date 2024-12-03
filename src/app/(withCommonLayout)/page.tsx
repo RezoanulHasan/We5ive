@@ -4,6 +4,7 @@ import AddsBanner from "@/components/UI/Homepage/AddsBanner";
 import Banner from "@/components/UI/Homepage/Banner";
 
 import FeaturesGrid from "@/components/UI/Homepage/FeaturesGrid";
+import FeatureSummary from "@/components/UI/Homepage/FeatureSummary ";
 import Gallery from "@/components/UI/Homepage/Gallery";
 import PeopleAskQuestion from "@/components/UI/Homepage/PeopleAskQuestion";
 
@@ -24,6 +25,7 @@ const HomePage: React.FC = () => {
       <Container>
         <NewArrival />
         <AddsBanner />
+        <FeatureSummary></FeatureSummary>
         <Slider />
 
         <Summer />

@@ -3,7 +3,6 @@
 "use client";
 import { commentData, Comment } from "@/components/ProductData/ProductData";
 import React from "react";
-
 import { FaStar, FaReply, FaThumbsUp } from "react-icons/fa";
 
 const CommentSystem: React.FC = () => {

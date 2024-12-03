@@ -9,7 +9,6 @@
 body {
   font-family: "Oswald", sans-serif, "Manrope";
 }
-
 * {
   padding: 0;
   margin: 0;
@@ -18,6 +17,10 @@ body {
 
 .bg-custom {
   @apply bg-gradient-to-r from-[#f7f3ff] via-[#eae4ff] to-[#dcd6ff];
+}
+
+.text-nav {
+  @apply hover:bg-[#8260dfe5] hover:rounded-lg text-black hover:text-white  text-base;
 }
 
 .button-custom {

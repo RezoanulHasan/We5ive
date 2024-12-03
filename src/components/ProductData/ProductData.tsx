@@ -681,11 +681,12 @@ export const productDatas = [
 ];
 
 export interface Product {
+  selectedQuantity: number;
   id: string;
   title: string;
   status: string;
   season: string;
-  images?: string[];
+  images: string[];
   price: number;
   description: string;
   reviews: number;
@@ -703,11 +704,24 @@ export type Products = {
   title: string;
   price: number;
   images: string[];
-  colors?: string[];
-  status: string;
+  colors: string[];
   stock: number;
   likes: number;
 };
+// Type definition for Product
+export interface CartItemProduct {
+  id: string;
+  title: string;
+  price: number;
+  stock: number;
+  images: string[];
+  colors?: string[];
+  sizes?: string[];
+  reviews?: number;
+  category?: string;
+  season?: string;
+  selectedQuantity?: number;
+}
 
 export interface DetailsPageProduct {
   category: string;
@@ -851,3 +865,21 @@ export const manImages = [
 
   "https://img.freepik.com/free-photo/young-handsome-man-street-outfit_1303-19658.jpg?uid=R154375610&ga=GA1.1.1093837504.1727806851&semt=ais_hybrid",
 ];
+export interface paginatedProducts {
+  id: string;
+  title: string;
+  status: string;
+  season: string;
+  images?: string[];
+  price: number;
+  description: string;
+  reviews: number;
+  stock: number;
+  likes: number;
+  comments: string;
+  category: string;
+  quantity: number;
+  sizes: string[];
+  colors: string[];
+  gender: string;
+}

@@ -3,7 +3,7 @@ import "./Signature.css";
 const Signature: React.FC = () => {
   return (
     <>
-      <div className="flex justify-between mt-6 mx-5">
+      <div className="flex justify-between mt-6 mx-5 ">
         <div>
           <h1 className="text-2xl font-semibold flex items-center  text-purple-700">
             Contact Us

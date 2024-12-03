@@ -20,8 +20,8 @@ const MenProducts: React.FC = () => {
     () => productDatas.filter((product) => product.gender === "Men"),
     []
   );
-
-  const displayedProducts = showAll ? menProducts : menProducts.slice(0, 8); // Display 8 products initially
+  // Display 8 products initially
+  const displayedProducts = showAll ? menProducts : menProducts.slice(0, 8);
 
   return (
     <div className="p-8 mt-20">
@@ -31,7 +31,7 @@ const MenProducts: React.FC = () => {
       </h2>
 
       {menProducts.length === 0 ? (
-        <p className="text-gray-500 text-center">
+        <p className="text-red-500 mt-10 text-center">
           No products available for men at the moment.
         </p>
       ) : (

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@smastrom/react-rating": "^1.5.0",
+    "@types/aos": "^3.0.7",
     "aos": "^2.3.4",
     "framer-motion": "^11.11.17",
     "next": "^15.0.3",

@@ -8,7 +8,7 @@ import Link from "next/link";
 const MainLogo: React.FC = () => {
   return (
     <div>
-      <Link href="/" className="btn btn-ghost text-2xl">
+      <Link href="/" className="btn btn-ghost bg-custom text-2xl p-2">
         <Image src={logo} alt="logo" width={150} height={10} />
       </Link>
     </div>
