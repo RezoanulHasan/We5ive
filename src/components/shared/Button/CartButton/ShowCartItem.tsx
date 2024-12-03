@@ -31,9 +31,11 @@ const ShowCartItem: React.FC = () => {
       title: "Removed from cart",
       text: "The product has been removed from your cart.",
       confirmButtonText: "OK",
+    }).then(() => {
+      // Reload the browser window
+      window.location.reload();
     });
   };
-
   const handleQuantityChange = (
     productId: string,
     quantity: number,
