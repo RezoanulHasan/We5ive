@@ -9,9 +9,9 @@ const UserProfile: React.FC = () => {
         <div
           tabIndex={0}
           role="button"
-          className="btn btn-ghost btn-circle avatar        hover:bg-[#8260dfe5]"
+          className="btn btn-ghost btn-circle avatar     bg-[#8260dfe5]      hover:bg-[#8260dfe5]"
         >
-          <FaUserAlt className="w-5 h-5 text-gray-700       hover:text-white     " />
+          <FaUserAlt className="w-5 h-5 text-white  hover:text-white     " />
         </div>
         <ul
           tabIndex={0}

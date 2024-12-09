@@ -24,7 +24,7 @@ body {
 }
 
 .button-custom {
-  @apply bg-[#8f71e1] text-white hover:bg-[#7e63d6] transition duration-300 ease-in-out rounded-lg;
+  @apply bg-[#8f71e1] text-white hover:bg-[#7e63d6] font-semibold rounded-lg hover:shadow-xl hover:scale-105 transition duration-300 ease-in-out;
 }
 .bg-custom-border {
   @apply bg-gradient-to-r from-purple-50 via-pink-50 to-blue-50 shadow-lg p-6 rounded-lg border border-gray-300;

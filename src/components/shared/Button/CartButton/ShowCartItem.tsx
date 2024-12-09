@@ -205,7 +205,7 @@ const ShowCartItem: React.FC = () => {
             </div>
           </div>
           <p className="text-green-600 p-2 text-lg ">
-            Avabile Stock:{product.stock}
+            Available Stock:{product.stock}
           </p>
           <div className="mb-4">
             <label
@@ -234,7 +234,7 @@ const ShowCartItem: React.FC = () => {
           </p>
           <div className="flex justify-between mt-4">
             <Link href={`/products/${product.id}`}>
-              <button className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+              <button className="flex items-center px-4 py-2    button-custom  ">
                 <FaInfoCircle className="mr-2" /> Details
               </button>
             </Link>
@@ -251,49 +251,87 @@ const ShowCartItem: React.FC = () => {
   );
 
   return (
-    <div className="container mx-auto p-4 mt-16">
-      <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">
-        Your Shopping Cart ({cartItems.length}{" "}
-        {cartItems.length === 1 ? "item" : "items"})
+    <div className="container mx-auto p-4 mt-20">
+      <h2 className="text-3xl font-bold mb-8 text-center  text-[#6441C2E5]  ">
+        𝓨𝓸𝓾𝓻 𝓢𝓱𝓸𝓹𝓹𝓲𝓷𝓰 𝓒𝓪𝓻𝓽
+        <p className="text-[#6441C2E5]  text-2xl mt-2">
+          {" "}
+          {cartItems.length} - {cartItems.length === 1 ? "item" : "items"}
+        </p>
       </h2>
       {cartItems.length === 0 ? (
-        <p className="text-gray-500 text-center">Your cart is empty.</p>
+        <p className="text-red-500 mt-20 text-center">Your cart is empty.</p>
       ) : (
         <>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {cartItemsMemo}
           </div>
+
           <div className="mt-8 bg-gray-100 p-6 rounded-lg">
-            <h2 className="text-xl font-semibold text-gray-800 mb-4 text-center">
-              Summary
+            <h2 className="text-4xl font-semibold text-[#6441C2E5]  mb-4 text-center">
+              𝓢𝓾𝓶𝓶𝓪𝓻𝔂
             </h2>
-            <p className="mb-2 text-center">
-              Total Products: {cartItems.length}
-            </p>
-            <p className="mb-2 text-center">Total Items: {totalItems}</p>
-            <p className="mb-2 text-center">
-              Total Price: ${totalPrice.toFixed(2)}
-            </p>
+
+            <div className="bg-white p-4 rounded-lg shadow-md mb-6">
+              <p className="mb-4 text-xl text-center font-semibold">
+                <span className=" font-semibold">Total Products:</span>{" "}
+                {cartItems.length}
+              </p>
+              <p className="mb-4 text-xl text-center  font-semibold">
+                <span className=" font-semibold">Total Items:</span>{" "}
+                {totalItems}
+              </p>
+
+              <hr className="my-4" />
+              <p className="mb-4 text-lg text-center text-gray-600">
+                <span className="font-medium">Total Price:</span> $
+                {totalPrice.toFixed(2)}
+              </p>
+
+              <p className="mb-4 text-lg text-center text-gray-600">
+                <span className="font-medium">4% VAT:</span> $
+                {(totalPrice * 0.04).toFixed(2)}
+              </p>
+              <p className="mb-4 text-lg text-center text-gray-600">
+                <span className="font-medium">5% Tax:</span> $
+                {(totalPrice * 0.05).toFixed(2)}
+              </p>
+              <p className="mb-4 text-lg text-center text-gray-600">
+                <span className="font-medium">15% Discount:</span> $
+                {(totalPrice * 0.15).toFixed(2)}
+              </p>
+              <hr className="my-4" />
+              <p className="text-2xl font-semibold text-center text-[#6441C2E5] ">
+                Final Total: $
+                {(
+                  totalPrice +
+                  totalPrice * 0.04 +
+                  totalPrice * 0.05 -
+                  totalPrice * 0.15
+                ).toFixed(2)}
+              </p>
+            </div>
 
             <div className="mt-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                Product Details:
+              <h3 className="text-2xl font-semibold text-[#6441C2E5] mb-4">
+                𝓟𝓻𝓸𝓭𝓾𝓬𝓽 𝓓𝓮𝓽𝓪𝓲𝓵𝓼 :
               </h3>
               {cartItems.map((item) => (
                 <div
                   key={item.id}
                   className="mb-4 border-b border-gray-300 pb-4"
                 >
-                  <p className="font-semibold text-gray-800">
-                    Title: <span className="text-gray-600">{item.title}</span>
+                  <p className="font-semibold  text-base text-[#4b1fc5e5]">
+                    Title:{" "}
+                    <span className="text-[#4b1fc5e5]">{item.title}</span>
                   </p>
-                  <p className="font-semibold text-gray-800">
+                  <p className="font-semibold text-gray-800 mt-4">
                     Selected Colors:{" "}
                     <span className="text-gray-600">
                       {selectedColors[item.id]?.join(", ") || "None"}
                     </span>
                   </p>
-                  <p className="font-semibold text-gray-800 mt-4">
+                  <p className="font-semibold text-gray-800  mb-4">
                     Selected Sizes:{" "}
                     <span className="text-gray-600 rounded-lg p-2">
                       {selectedSizes[item.id]?.join(", ") || "None"}
@@ -310,8 +348,8 @@ const ShowCartItem: React.FC = () => {
               ))}
             </div>
             <div className="flex justify-center items-center">
-              <button className="px-6 py-3 bg-green-600 text-white rounded-md mt-4 hover:bg-green-700">
-                Checkout
+              <button className="px-10 py-4  button-custom ">
+                Proceed to Checkout
               </button>
             </div>
           </div>

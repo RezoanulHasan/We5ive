@@ -35,7 +35,7 @@ const ShoppingCart: React.FC = () => {
           <span className="badge badge-sm indicator-item">
             {cartItems.length}
           </span>
-          <FaShoppingCart className="h-5 w-5" />
+          <FaShoppingCart className="h-5 w-5  text-[#8260dfe5] " />
         </div>
         <ul
           tabIndex={0}

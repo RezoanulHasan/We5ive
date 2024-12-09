@@ -43,7 +43,7 @@ const NewArrival: React.FC = () => {
       <div className="mt-8 text-center">
         <button
           onClick={() => setShowAll(!showAll)}
-          className="px-8 py-3 font-semibold button-custom"
+          className="px-8 py-3  button-custom"
         >
           {showAll ? "Show Less" : "Show More"}
         </button>
