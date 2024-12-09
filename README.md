@@ -33,8 +33,8 @@ Our E-commerce platform offers a wide range of fashion and lifestyle products fo
 
 ### **Cart Management**
 
-- select color,size and Quantity(in the range of stock ) and modern online sopping experience.
-- Count total Products,Items, price with Vat ,Tax, Discount ,Final Total .
+- Select color,size and Quantity(in the range of stock) also modern online shopping experience.
+- Count total Products,Items,Price with Vat,Tax,Discount,Final Total .
 - Add and remove products from the cart using **localStorage**.
 
 ---
