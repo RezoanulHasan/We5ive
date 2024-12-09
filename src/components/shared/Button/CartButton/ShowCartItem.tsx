@@ -10,6 +10,7 @@ import Link from "next/link";
 import galleryAnimation from "@/components/Hooks/GallerySection";
 import { CartItemProduct } from "@/components/ProductData/ProductData";
 import PaySummary from "./PaySummary";
+import Button from "../Button";
 
 const ShowCartItem: React.FC = () => {
   const [cartItems, setCartItems] = useState<CartItemProduct[]>([]);
@@ -257,7 +258,14 @@ const ShowCartItem: React.FC = () => {
         </p>
       </h2>
       {cartItems.length === 0 ? (
-        <p className="text-red-500 mt-20 text-center">Your cart is empty.</p>
+        <div>
+          <p className="text-red-500 mt-20 mb-4 text-center text-2xl font-semibold">
+            Your Shopping Product Item is empty.
+          </p>
+          <div className="flex justify-center">
+            <Button></Button>{" "}
+          </div>
+        </div>
       ) : (
         <>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -18,7 +18,7 @@ import useTitle from "../Hooks/useTitle";
 const AboutCompany: React.FC = () => {
   useTitle("About Company");
   return (
-    <div className="bg-gray-50 py-12 px-4 md:px-20 lg:px-40   mt-20">
+    <div className=" bg-white border border-gray-200 rounded-lg shadow-lg py-12 px-4 md:px-20 lg:px-40   mt-20">
       {/* Header Section */}
       <div className="text-center mb-12">
         <h1 className="text-4xl font-extrabold text-purple-700 mb-4">

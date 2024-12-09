@@ -1,8 +1,9 @@
+"use client";
 import { useRef, useState } from "react";
 import { toPng } from "html-to-image"; // Import html-to-image package
 import { CartItemProduct } from "@/components/ProductData/ProductData";
 import Swal from "sweetalert2"; // Import SweetAlert2 for popups
-
+import { useRouter } from "next/navigation";
 type PaySummaryProps = {
   cartItems: CartItemProduct[];
   selectedColors: { [key: string]: string[] };
@@ -15,7 +16,7 @@ const PaySummary = ({
   selectedSizes,
 }: PaySummaryProps) => {
   const summaryRef = useRef<HTMLDivElement | null>(null);
-
+  const router = useRouter();
   // State to manage user inputs for name, phone, date, and address
   const [userInfo, setUserInfo] = useState({
     name: "",
@@ -58,7 +59,7 @@ const PaySummary = ({
       Swal.fire({
         icon: "error",
         title: "Missing Information",
-        text: "Please fill out all User info  before proceeding.",
+        text: "Please fill out all user info  before proceeding.",
       });
       return;
     }
@@ -70,7 +71,7 @@ const PaySummary = ({
           // Create a temporary anchor element to download the image
           const link = document.createElement("a");
           link.href = dataUrl; // Use the data URL as the href
-          link.download = "summary.png"; // Specify the default file name
+          link.download = "Shopping-summary.png"; // Specify the default file name
           link.click(); // Simulate a click to trigger the download
 
           // After download, show success message
@@ -86,6 +87,12 @@ const PaySummary = ({
               date: "",
               address: "",
             });
+
+            // Remove cart from localStorage
+            localStorage.removeItem("cart");
+            window.location.reload();
+            // Redirect to /allProduct route
+            router.push("/allProduct");
           });
         })
         .catch((error) => {
@@ -97,7 +104,7 @@ const PaySummary = ({
   return (
     <div id="pay-summary-container" className="mt-8 bg-gray-100 p-6 rounded-lg">
       <h2 className="text-4xl font-semibold mb-4 text-center text-purple-600">
-        𝓢𝓾𝓶𝓶𝓪𝓻𝔂
+        𝓢𝓾𝓶𝓶𝓪𝓻𝓎
       </h2>
       <div ref={summaryRef} className="bg-white p-4 ">
         <div className="bg-white p-4 rounded-lg shadow-md mb-6">
@@ -183,7 +190,7 @@ const PaySummary = ({
             className="mb-4 w-full px-4 py-2 border rounded-lg"
           />
           <input
-            type="num"
+            type="number"
             name="phone"
             value={userInfo.phone}
             onChange={handleChange}
@@ -202,6 +209,7 @@ const PaySummary = ({
             type="text"
             name="address"
             value={userInfo.address}
+            onChange={handleChange}
             placeholder="Enter your address"
             className="mb-4 w-full px-4 py-2 border rounded-lg"
           />

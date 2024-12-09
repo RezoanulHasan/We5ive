@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
         <Link href="/aboutCompany">Details</Link>
       </li>
       <li className="text-nav ">
-        <Link href="/">What's News</Link>
+        <Link href="/whatNews">What's News</Link>
       </li>
     </>
   );

@@ -2,6 +2,7 @@
 import React from "react";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import MainLogo from "../Navbar/MainLogo";
+import Newsletter from "./Newsletter";
 
 const Footer: React.FC = () => {
   return (
@@ -33,24 +34,8 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Newsletter Information */}
-            <div className="flex flex-col gap-4">
-              <h1 className="text-xl md:text-2xl font-semibold     text-[#b6a7dde5]">
-                Sign Up For Our Newsletter!
-              </h1>
-              <p className="text-sm md:text-base">
-                Get notified about updates and be the first to get early access
-                to new product update
-              </p>
-              <div className="flex flex-col md:flex-row gap-1">
-                <input
-                  type="text"
-                  placeholder="username@site.com"
-                  className="input input-bordered w-full md:w-64"
-                />
-                <button className="btn    button-custom w-full md:w-auto">
-                  Subscribe
-                </button>
-              </div>
+            <div className="flex flex-col gap-2">
+              <Newsletter></Newsletter>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm md:text-base">
@@ -78,7 +63,7 @@ const Footer: React.FC = () => {
                 Terms of Use
               </a>
               <a
-                href="#"
+                href="/privacyPolicy"
                 className="mb-2 text-gray-400 hover:text-white transition duration-300"
               >
                 Privacy Policy
