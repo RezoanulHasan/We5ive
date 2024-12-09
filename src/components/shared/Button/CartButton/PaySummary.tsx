@@ -1,6 +1,7 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { toPng } from "html-to-image"; // Import html-to-image package
 import { CartItemProduct } from "@/components/ProductData/ProductData";
+import Swal from "sweetalert2"; // Import SweetAlert2 for popups
 
 type PaySummaryProps = {
   cartItems: CartItemProduct[];
@@ -14,6 +15,23 @@ const PaySummary = ({
   selectedSizes,
 }: PaySummaryProps) => {
   const summaryRef = useRef<HTMLDivElement | null>(null);
+
+  // State to manage user inputs for name, phone, date, and address
+  const [userInfo, setUserInfo] = useState({
+    name: "",
+    phone: "",
+    date: "",
+    address: "",
+  });
+
+  // Handle changes in input fields
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setUserInfo((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
 
   const calculateTotals = () => {
     const totalItems = cartItems.reduce(
@@ -30,6 +48,21 @@ const PaySummary = ({
   const { totalItems, totalPrice } = calculateTotals();
 
   const handlePayNow = () => {
+    // Check if all fields are filled
+    if (
+      !userInfo.name ||
+      !userInfo.phone ||
+      !userInfo.date ||
+      !userInfo.address
+    ) {
+      Swal.fire({
+        icon: "error",
+        title: "Missing Information",
+        text: "Please fill out all User info  before proceeding.",
+      });
+      return;
+    }
+
     if (summaryRef.current) {
       // Use html-to-image to capture the content of summaryRef and generate an image
       toPng(summaryRef.current)
@@ -39,6 +72,21 @@ const PaySummary = ({
           link.href = dataUrl; // Use the data URL as the href
           link.download = "summary.png"; // Specify the default file name
           link.click(); // Simulate a click to trigger the download
+
+          // After download, show success message
+          Swal.fire({
+            icon: "success",
+            title: "Payment Summary Saved",
+            text: "Your payment summary has been saved successfully.",
+          }).then(() => {
+            // Reset form fields after success message is acknowledged
+            setUserInfo({
+              name: "",
+              phone: "",
+              date: "",
+              address: "",
+            });
+          });
         })
         .catch((error) => {
           console.error("Error generating image", error);
@@ -48,10 +96,10 @@ const PaySummary = ({
 
   return (
     <div id="pay-summary-container" className="mt-8 bg-gray-100 p-6 rounded-lg">
-      <h2 className="text-4xl font-semibold  mb-4 text-center  text-purple-600">
+      <h2 className="text-4xl font-semibold mb-4 text-center text-purple-600">
         𝓢𝓾𝓶𝓶𝓪𝓻𝔂
       </h2>
-      <div ref={summaryRef} className="bg-white p-4  ">
+      <div ref={summaryRef} className="bg-white p-4 ">
         <div className="bg-white p-4 rounded-lg shadow-md mb-6">
           <p className="mb-4 text-xl text-center font-semibold">
             <span className="font-semibold">Total Products:</span>{" "}
@@ -78,15 +126,14 @@ const PaySummary = ({
             {(totalPrice * 0.15).toFixed(2)}
           </p>
           <hr className="my-4" />
-          <p className="text-2xl font-semibold text-center  text-purple-500">
-            Final Total: $(
+          <p className="text-2xl font-semibold text-center text-purple-500">
+            Final Total: $
             {(
               totalPrice +
               totalPrice * 0.04 +
               totalPrice * 0.05 -
               totalPrice * 0.15
             ).toFixed(2)}
-            )
           </p>
         </div>
 
@@ -98,7 +145,7 @@ const PaySummary = ({
           {cartItems.map((item) => (
             <div key={item.id} className="mb-4 border-b border-gray-300 pb-4">
               <p className="font-semibold text-base text-purple-600">
-                Title: <span className="t text-purple-500">{item.title}</span>
+                Title: <span className="text-purple-500">{item.title}</span>
               </p>
               <p className="font-semibold text-gray-800 mt-4">
                 Selected Colors:{" "}
@@ -121,10 +168,48 @@ const PaySummary = ({
             </div>
           ))}
         </div>
+
+        {/* User Information Form */}
+        <div className="mt-6">
+          <h3 className="text-2xl font-semibold text-purple-700 mb-4">
+            𝓤𝓼𝓮𝓻 𝓓𝓮𝓽𝓪𝓲𝓵𝓼 :
+          </h3>
+          <input
+            type="text"
+            name="name"
+            value={userInfo.name}
+            onChange={handleChange}
+            placeholder="Enter your name"
+            className="mb-4 w-full px-4 py-2 border rounded-lg"
+          />
+          <input
+            type="num"
+            name="phone"
+            value={userInfo.phone}
+            onChange={handleChange}
+            placeholder="Enter your phone number"
+            className="mb-4 w-full px-4 py-2 border rounded-lg"
+          />
+          <input
+            type="date"
+            name="date"
+            value={userInfo.date}
+            onChange={handleChange}
+            className="mb-4 w-full px-4 py-2 border rounded-lg"
+          />
+
+          <input
+            type="text"
+            name="address"
+            value={userInfo.address}
+            placeholder="Enter your address"
+            className="mb-4 w-full px-4 py-2 border rounded-lg"
+          />
+        </div>
       </div>
 
       <div className="flex justify-center items-center button-custom">
-        <button onClick={handlePayNow} className="px-10 py-4 ">
+        <button onClick={handlePayNow} className="px-10 py-4">
           Pay Now
         </button>
       </div>
